@@ -9,7 +9,7 @@ Explain
 - blah
 - blah
 """
-* url = "https://profiles.ihe.net/Domain/Profile/CapabilityStatement/IHE.ToDo.client"
+* url = "https://profiles.ihe.net/ITI/VHL/CapabilityStatement/IHE.ToDo.client"
 * name = "IHE_ToDo_client"
 * title = "IHE ToDo client"
 * status = #active
@@ -26,7 +26,7 @@ Explain
     * description = "Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-app-launch](http://www.hl7.org/fhir/smart-app-launch/)"
   * resource[+]
     * type = #Observation
-    * supportedProfile[+] = "https://profiles.ihe.net/Domain/Profile/StructureDefinition/IHE.ToDo.laugh"
+    * supportedProfile[+] = "https://profiles.ihe.net/ITI/VHL/StructureDefinition/IHE.ToDo.laugh"
     * documentation = """
 ToDo transaction [ITI-00]
 """
@@ -66,7 +66,7 @@ Explain
 - blah
 - blah
 """
-* url = "https://profiles.ihe.net/Domain/Profile/CapabilityStatement/IHE.ToDo.server"
+* url = "https://profiles.ihe.net/ITI/VHL/CapabilityStatement/IHE.ToDo.server"
 * name = "IHE_ToDo_supplier"
 * title = "IHE ToDo Server"
 * status = #active
@@ -83,7 +83,7 @@ Explain
     * description = "Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-app-launch](http://www.hl7.org/fhir/smart-app-launch/)"
   * resource[+]
     * type = #Observation
-    * supportedProfile[+] = "https://profiles.ihe.net/Domain/Profile/StructureDefinition/IHE.ToDo.laugh"
+    * supportedProfile[+] = "https://profiles.ihe.net/ITI/VHL/StructureDefinition/IHE.ToDo.laugh"
     * documentation = """
 ToDo transaction [ITI-00]
 """
