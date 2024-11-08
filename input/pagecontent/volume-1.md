@@ -1,8 +1,10 @@
 
 **TODO: Provide an end-user friendly overview of what the profile does for them. Keep it brief (a paragraph or two, up to a page). If extensive detail is needed, it should be included in Section XX.4- Use Cases.**
 
-The Verifiable Health Links (VHL) Profile defines protocols and patterns that allow the sharing of health documents in the form of links that are verifiable within a trusted network. VHLs facilitate convenient access to health information through easily shareable links, such as QR codes.
-
+<mark>
+    The Verifiable Health Links (VHL) Profile defines protocols and patterns that allow the sharing of health documents in the form of links that are verifiable within a trusted network. VHLs facilitate convenient access to health information through easily shareable links, such as QR codes.
+    
+</mark>
 **TODO: Explicitly state whether this is a Workflow, Transport, or Content Module (or combination) profile. See the IHE Technical Frameworks General Introduction for definitions of these profile types. The IHE Technical Frameworks [General Introduction](https://profiles.ihe.net/GeneralIntro/). **
 
 <a name="actors-and-transactions"> </a>
@@ -400,7 +402,7 @@ Ms. SJ signs up for a patient-facing provincial application to access her person
 
 **Pre-conditions**:
 
-Patient has access to a patient-facing application which supports access to their patient summary and creation of a QR code with a VHL for sharing with an HCP. 
+- Patient has access to a patient-facing application which supports access to their patient summary and creation of a QR code with a VHL for sharing with an HCP. 
 
 
 **Main Flow**:
@@ -408,9 +410,12 @@ Patient has access to a patient-facing application which supports access to thei
 - Patient or their designated caregiver accesses Personal Health Information via a patient facing application (e.g., Jurisdictional Patient Portal).
 - Patient or their designated caregiver requests access to a shareable patient summary, on option available within their patient facing application.
 - Patient or their designated caregiver is presented with applicable privacy and/or security forms such as a consent statement, requirements for a PIN, passcode, validity time frame etc., according to jurisdictional policies.
-- Patient or their designated caregiver reviews the information presented and determines if they would like to proceed. If yes,proceed to step 4a. Otherwise, proceed to step 4b.
-  - Patient or their designated caregiver completes the privacy and security forms. Proceed to step 5.
-  - Patient or their designated caregiver decide not to complete the privacy and security forms. The request for their shareable patient summary is terminated. Process complete. (Refer to alternate flow for step 4b)
+- Patient or their designated caregiver reviews the information presented and selects information they'd like to share.
+- Patient determines if they would like to proceed. 
+  - If yes,proceed to complete the privacy and security forms.
+  - If no, Patient or their designated caregiver decide not to complete the privacy and security forms. The request for their verifiable patient summary is terminated.
+- If process was completed, the VHL requester makes the request with defined parameters of PIN, passcode, validity time etc to the VHL creator
+- VHL creator issues VHL
 
 **Post-conditions:**
 
@@ -431,7 +436,8 @@ The patient provides access to their encrypted patient summary via the QR code o
 **Pre-conditions**:
 - Patient has a QR code or VHL with access to a patient summary.
 - HCP has the necessary tools to scan the QR code or access the VHL (e.g., a QR code scanner, Health Information System).
-- VHL Consumer is in the same trust network as as the VHL Creator.
+- VHL Responder and VHL Consumer have shared their public keys to a trust network
+- VHL Consumer is in the same trust network as as the VHL Responder.
 
 **Main Flow**:
 - Patient has a medical encounter with a health care provider (HCP) virtually or in-person to obtain health care services. 
@@ -441,9 +447,9 @@ The patient provides access to their encrypted patient summary via the QR code o
 - VHL consumer verifies the provenance of the shared link and confirms that the link originated from a trusted source before making a request to retrieve health document
 - VHL responder verifies the manifest request was made by a trusted organization/entity
 - VHL responder verifies the information submitted by the HCP in response to the security prompts (e.g., passcode/PIN). 
-  - If the security prompts are correct, proceed to step 6.
-  - If the security prompts are incorrect, PS-CA Solution denies access and prompts the user to re-submit the security prompts. If multiple failed attempts occur or the HCP abandons the process, the request for the patient summary is terminated. Process complete.
-- VHL consumer Solution retrieves the patient summary. Note: This process typically involves two steps: initially, a manifest file is provided containing the link to the patient summary. The patient summary is then retrieved in a subsequent step.
+  - If the security prompts are correct, proceed to retrieve patient summary.
+  - If the security prompts are incorrect, VHL responder denies access and prompts the user to re-submit the security prompts. If multiple failed attempts occur or the HCP abandons the process, the request for the patient summary is terminated. Process complete.
+- VHL consumer retrieves the patient summary. Note: This process typically involves two steps: initially, a manifest file is provided containing the link to the patient summary. The patient summary is then retrieved in a subsequent step.
 - HCP views and optionally saves/imports the patient summary in their clinical system.
 
 **Post-conditions:**
