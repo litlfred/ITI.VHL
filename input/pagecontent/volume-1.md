@@ -1,6 +1,8 @@
 
 **TODO: Provide an end-user friendly overview of what the profile does for them. Keep it brief (a paragraph or two, up to a page). If extensive detail is needed, it should be included in Section XX.4- Use Cases.**
 
+The Verifiable Health Links (VHL) Profile defines protocols and patterns that allow the sharing of health documents in the form of links that are verifiable within a trusted network. VHLs facilitate convenient access to health information through easily shareable links, such as QR codes.
+
 **TODO: Explicitly state whether this is a Workflow, Transport, or Content Module (or combination) profile. See the IHE Technical Frameworks General Introduction for definitions of these profile types. The IHE Technical Frameworks [General Introduction](https://profiles.ihe.net/GeneralIntro/). **
 
 <a name="actors-and-transactions"> </a>
@@ -35,19 +37,17 @@ Profile and the relevant transactions between them.
 
 <p id ="tXX.1-1" class="tableTitle">Table XX.1-1: Profile Acronym Profile - Actors and Transactions</p>
 
-|         |               |                        |                 |                                   |
-|---------|---------------|------------------------|-----------------|-----------------------------------|
-| Actors  | Transactions  | Initiator or Responder | Optionality     | Reference                         |
-| Actor A | Transaction 1 |                        | R               | Domain Acronym TF-2: 3.Y1 |
-|         | Transaction 2 |                        | R               | Domain Acronym TF-2: 3.Y2 |
-| Actor F | Transaction 1 |                        | R               | Domain Acronym TF-2: 3.Y1 |
-|         | Transaction 2 |                        | R               | Domain Acronym TF-2: 3.Y2 |
-| Actor D | Transaction 1 |                        | R               | Domain Acronym TF-2: 3.Y1 |
-| Actor E | Transaction 2 |                        | R               | Domain Acronym TF-2: 3.Y2 |
-|         | Transaction 3 |                        | O ( See Note 1) | Domain Acronym TF-2: 3.Y3 |
-|         | Transaction 4 |                        | O ( See Note 1) | Domain Acronym TF-2: 3.Y4 |
-| Actor B | Transaction 3 |                        | R               | Domain Acronym TF-2: 3.Y3 |
-|         | Transaction 4 |                        | O ( See Note 2) | Domain Acronym TF-2: 3.Y4 |
+|              |                              |                        |            |                           |
+|--------------|------------------------------|------------------------|------------|---------------------------|
+| Actors       | Transactions                 | Initiator or Responder | Optionality| Reference                 |
+| Trust Anchor | Retrieve cached keys         |                        | R          | Domain Acronym TF-2: 3.Y1 |
+| VHL Requester| Generate VHL/Request VHL?    |                        | R          | Domain Acronym TF-2: 3.Y1 |
+| VHL Consumer | Retrieve cached keys         |                        | R          | Domain Acronym TF-2: 3.Y2 |
+|              | Retrieve VHLink manifest     |                        | O          | Domain Acronym TF-2: 3.Y1 |
+|              | Retrieve VHLink Clinical Data|                        | R          | Domain Acronym TF-2: 3.Y2 |
+| VHL Creator  | Generate VHL/Request VHL?    |                        | R          | Domain Acronym TF-2: 3.Y3 |
+| VHL Responder| Retrieve VHLink manifest     |                        | O          | Domain Acronym TF-2: 3.Y4 |
+|              | Retrieve VHLink Clinical Data|                        | R          | Domain Acronym TF-2: 3.Y3 |
 {: .grid}
 
 Note 1: *For example, a note could specify that at least one of the
@@ -376,51 +376,20 @@ not allowed in use cases.
 
 ### XX.4.1 Concepts
 
-If needed, this section provides an overview of the concepts that
-provide necessary background for understanding the profile. If not
-needed, state "Not applicable." For an example of why/how this section
-may be needed, please see ITI Cross Enterprise Workflow (XDW).
-
-It may be useful in this section but is not necessary, to provide a
-short list of the use cases described below and explain why they are
-different.
+Verifiable Health Links describe protocols that enable sharing of health documents with additional sharing options that include: limited-time access, long-term sharing of data that can evolve over time, and protecting access with a PIN. These shareable links can often be downloaded onto devices and converted into a QR code format, facilitating patient-mediated data sharing and interoperability within the healthcare ecosystem.
 
 ### XX.4.2 Use Cases
 
-#### XX.4.2.1 Use Case \#1: simple name
+#### XX.4.2.1 Use Case \#1: Holder requests generation of link
 
-One or two sentence simple description of this particular use
-case.
-
-Note that Section XX.4.2.1 repeats in its entirety for additional use
-cases (replicate as Section XX.4.2.2, XX.4.2.3, etc.).
+A patient, via a patient-facing application, requests access to a shareable copy of their health summary. 
 
 ##### XX.4.2.1.1 simple name Use Case Description
+Ms. SJ, a 37-year-old non-smoker and non-drinker, recently experienced a high-risk pregnancy involving early hospitalization and pre-term delivery due to pre-eclampsia and gestational diabetes. She is currently taking metformin and an anti-hypertensive. Ms. SJ, recently moved within her province, and she found a new primary care clinic that is taking on new patients.  
 
-Describe the key use cases addressed by the profile. Limit to a
-maximum of one page of text or consider an appendix.
+Ms. SJ signs up for a patient-facing provincial application to access her personal health information and creates a shareable patient summary, which will be useful for her upcoming appointment. On the application, she is presented with privacy and security measures, such as a consent notice, passcode, and QR code timeout. After providing her consent and completing the security instructions for her shareable patient summary, the application assembles her patient summary using available data and creates a VHL and QR code, which is displayed on Ms. SJ’s mobile phone, and she is happy to see that she has the option to print a copy. Ms. SJ is ready for her appointment. 
 
 ##### XX.4.2.1.2 simple name Process Flow
-
-Diagram and describe the process flow(s) covered by this profile in
-order to satisfy the use cases. Demonstrate how the profile transactions
-are combined/sequenced. To provide context and demonstrate how the
-profile interacts with other profiles, feel free to include transactions
-and events that are "external" to this profile (using appropriate
-notation.)
-
-The set of process flows will typically be exemplary, not exhaustive
-(i.e., it will address all the use cases, but will not show all possible
-combinations of actors, or all possible sequencing of transactions).
-
-If there are detailed behavioral rules that apply to a specific process
-flow or multiple process flows, an appendix may be added as needed.
-
-The roles at the top of the swimlane diagram should correspond to
-actor names, include the profile acronym:actor name if referencing an
-actor from a different profile.
-
-Modify the following "Swimlane Diagram".
 
 <figure>
 {%include usecase1-processflow.svg%}
@@ -428,121 +397,193 @@ Modify the following "Swimlane Diagram".
 </figure>
 <br clear="all">
 
-If process flow "swimlane" diagrams require additional explanation
-to clarify conditional flows, or flow variations need to be described
-where alternate systems may be playing different actor roles, document
-those conditional flows here.
-
-Delete the material below if this is a workflow or transport
-profile. Delete the material above if this profile is a content module
-only profile.
 
 **Pre-conditions**:
 
-Very briefly (typically one sentence) describe the conditions or
-timing when this content module would be used.
+Patient has access to a patient-facing application which supports access to their patient summary and creation of a QR code with a VHL for sharing with an HCP. 
+
 
 **Main Flow**:
 
-Typically in an enumerated list, describe the clinical workflow
-when, where, and how this content module would be used.
+- Patient or their designated caregiver accesses Personal Health Information via a patient facing application (e.g., Jurisdictional Patient Portal).
+- Patient or their designated caregiver requests access to a shareable patient summary, on option available within their patient facing application.
+- Patient or their designated caregiver is presented with applicable privacy and/or security forms such as a consent statement, requirements for a PIN, passcode, validity time frame etc., according to jurisdictional policies.
+- Patient or their designated caregiver reviews the information presented and determines if they would like to proceed. If yes,proceed to step 4a. Otherwise, proceed to step 4b.
+  - Patient or their designated caregiver completes the privacy and security forms. Proceed to step 5.
+  - Patient or their designated caregiver decide not to complete the privacy and security forms. The request for their shareable patient summary is terminated. Process complete. (Refer to alternate flow for step 4b)
 
 **Post-conditions:**
 
-Very briefly (typically one sentence) describe the state of the
-clinical scenario after this content module has been created including
-examples of potential next steps.
+A QR code, with a VHL, is created and displayed to the patient for accessing and sharing their patient summary.  
+
 
 <a name="security-considerations"> </a>
 
+
+#### XX.4.2.2 Use Case \#2: Holder shares generated VHLink to HCP for access
+
+The patient provides access to their encrypted patient summary via the QR code on their mobile device or by sharing a secure VHL, (e.g., via email) at the point of care (e.g., walk-in clinic, emergency department).  The healthcare provider scans the QR code or accesses the VHL shared by the patient, addressing any security prompts, such as entering a passcode if required, and then may proceed to view/utilize and consume the patient summary.
+
+##### XX.4.2.2.1 simple name Use Case Description
+
+##### XX.4.2.2.2 simple name Process Flow
+
+**Pre-conditions**:
+- Patient has a QR code or VHL with access to a patient summary.
+- HCP has the necessary tools to scan the QR code or access the VHL (e.g., a QR code scanner, Health Information System).
+- VHL Consumer is in the same trust network as as the VHL Creator.
+
+**Main Flow**:
+- Patient has a medical encounter with a health care provider (HCP) virtually or in-person to obtain health care services. 
+- Patient displays their patient summary QR code on their mobile device or shares a verifiable health link (e.g., via email) with the HCP and provides them with the passcode/PIN that they created (in Part A of this use case) to access the patient summary.
+- HCP scans the QR code or accesses the VHL in a browser to retrieve the patient summary. 
+- HCP is presented with applicable privacy and/or security form and they enter required security prompts (e.g., passcode, expiration time frame etc.,) according to jurisdictional policies.
+- VHL consumer verifies the provenance of the shared link and confirms that the link originated from a trusted source before making a request to retrieve health document
+- VHL responder verifies the manifest request was made by a trusted organization/entity
+- VHL responder verifies the information submitted by the HCP in response to the security prompts (e.g., passcode/PIN). 
+  - If the security prompts are correct, proceed to step 6.
+  - If the security prompts are incorrect, PS-CA Solution denies access and prompts the user to re-submit the security prompts. If multiple failed attempts occur or the HCP abandons the process, the request for the patient summary is terminated. Process complete.
+- VHL consumer Solution retrieves the patient summary. Note: This process typically involves two steps: initially, a manifest file is provided containing the link to the patient summary. The patient summary is then retrieved in a subsequent step.
+- HCP views and optionally saves/imports the patient summary in their clinical system.
+
+**Post-conditions:**
+
+HCP has access to Patient Summary.
+
+
+#### XX.4.2.3 Use Case \#3: Holder requests to destroy a VHLink
+
+##### XX.4.2.3.1 simple name Use Case Description
+
+##### XX.4.2.3.2 simple name Process Flow
+
+**Pre-conditions**:
+
+**Main Flow**:
+
+**Post-conditions:**
+
+
+#### XX.4.2.4 Use Case \#4: Holder requests to destroy a VHLink
+
+##### XX.4.2.4.1 simple name Use Case Description
+
+##### XX.4.2.4.2 simple name Process Flow
+
+**Pre-conditions**:
+
+**Main Flow**:
+
+**Post-conditions:**
+
+#### XX.4.2.5 Use Case \#5: Receiver accesses the data and updates the link and provides a new link back
+
+##### XX.4.2.5.1 simple name Use Case Description
+
+##### XX.4.2.5.2 simple name Process Flow
+
+**Pre-conditions**:
+
+**Main Flow**:
+
+**Post-conditions:**
+
 ## XX.5 ToDo Security Considerations
 
-See ITI TF-2x: [Appendix Z.8 "Mobile Security Considerations"](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations)
+<i>
+    See ITI TF-2x: [Appendix Z.8 "Mobile Security Considerations"](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations)
+    
+    The following is instructions to the editor and this text is not to be included in a publication.
+    The material initially from [RFC 3552 "Security Considerations Guidelines" July 2003](https://tools.ietf.org/html/rfc3552).
+    
+    This section should address downstream design considerations, specifically for: Privacy, Security, and Safety. These might need to be individual header sections if they are significant or need to be referenced.
+    
+    The editor needs to understand Security and Privacy fundamentals.
+    General [Security and Privacy guidance]({{site.data.fhir.path}}secpriv-module.html) is provided in the FHIR Specification. 
+    The FHIR core specification should be leveraged where possible to inform the reader of your specification.
+    
+    IHE FHIR based profiles should reference the [ITI Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html) section 8 Mobile Security and Privacy Considerations base when appropriate.
+    
+    IHE Document Content profiles can reference the security and privacy provided by the Document Sharing infrastructure as directly grouped or possibly to be grouped.
+    
+       While it is not a requirement that any given specification or system be
+       immune to all forms of attack, it is still necessary for authors of specifications to
+       consider as many forms as possible.  Part of the purpose of the
+       Security and Privacy Considerations section is to explain what attacks have been
+       considered and what countermeasures can be applied to defend against them.
+    
+       There should be a clear description of the kinds of threats on the
+       described specification.  This should be approached as an
+       effort to perform "due diligence" in describing all known or
+       foreseeable risks and threats to potential implementers and users.
+    
+    Authors MUST describe:
+    
+    * which attacks have been considered and addressed in the specification
+    * which attacks have been considered but not addressed in the specification
+    * what could be done in system design, system deployment, or user training
+    
+       At least the following forms of attack MUST be considered:
+       eavesdropping, replay, message insertion, deletion, modification, and
+       man-in-the-middle.  Potential denial of service attacks MUST be
+       identified as well.  If the specification incorporates cryptographic
+       protection mechanisms, it should be clearly indicated which portions
+       of the data are protected and what the protections are (i.e.,
+       integrity only, confidentiality, and/or endpoint authentication,
+       etc.).  Some indication should also be given to what sorts of attacks
+       the cryptographic protection is susceptible.  Data which should be
+       held secret (keying material, random seeds, etc.) should be clearly
+       labeled.
+    
+       If the specification involves authentication, particularly user-host
+       authentication, the security of the authentication method MUST be
+       clearly specified.  That is, authors MUST document the assumptions
+       that the security of this authentication method is predicated upon.
+    
+       The threat environment addressed by the Security and Privacy Considerations
+       section MUST at a minimum include deployment across the global
+       Internet across multiple administrative boundaries without assuming
+       that firewalls are in place, even if only to provide justification
+       for why such consideration is out of scope for the protocol.  It is
+       not acceptable to only discuss threats applicable to LANs and ignore
+       the broader threat environment.  In
+       some cases, there might be an Applicability Statement discouraging
+       use of a technology or protocol in a particular environment.
+       Nonetheless, the security issues of broader deployment should be
+       discussed in the document.
+    
+       There should be a clear description of the residual risk to the user
+       or operator of that specification after threat mitigation has been
+       deployed.  Such risks might arise from compromise in a related
+       specification (e.g., IPsec is useless if key management has been
+       compromised), from incorrect implementation, compromise of the
+       security technology used for risk reduction (e.g., a cipher with a
+       40-bit key), or there might be risks that are not addressed by the
+       specification (e.g., denial of service attacks on an
+       underlying link protocol).  Particular care should be taken in
+       situations where the compromise of a single system would compromise
+       an entire protocol.  For instance, in general specification designers
+       assume that end-systems are inviolate and don't worry about physical
+       attack.  However, in cases (such as a certificate authority) where
+       compromise of a single system could lead to widespread compromises,
+       it is appropriate to consider systems and physical security as well.
+    
+       There should also be some discussion of potential security risks
+       arising from potential misapplications of the specification or technology
+       described in the specification.  
+      
+    This section also include specific considerations regarding Digital Signatures, Provenance, Audit Logging, and De-Identification.
+    
+    Where audit logging is specified, a StructureDefinition profile(s) should be included, and Examples of those logs might be included.
+    
+    <a name="other-grouping"> </a>
+</i>
 
-The following is instructions to the editor and this text is not to be included in a publication.
-The material initially from [RFC 3552 "Security Considerations Guidelines" July 2003](https://tools.ietf.org/html/rfc3552).
+VHL is a building block that is meant to be used together with added security measures, otherwise it is not suitable for exchange in environments where security and provenance cannot be reliably established by other means.
 
-This section should address downstream design considerations, specifically for: Privacy, Security, and Safety. These might need to be individual header sections if they are significant or need to be referenced.
+- The European Health Data Space can be found here https://www.europarl.europa.eu/doceo/document/TA-9-2024-0331_EN.pdf .  In particular, provisions 8f) and 12a) outline the requirements for the auditability of data access.  This means that there needs to be a means to identify the entity/organization that is acting as a VHL Receiving Application.  
+- Before a Receiver Application initiates a VHL request, it should be able to determine the provenance of the VHL that it was presented. 
 
-The editor needs to understand Security and Privacy fundamentals.
-General [Security and Privacy guidance]({{site.data.fhir.path}}secpriv-module.html) is provided in the FHIR Specification. 
-The FHIR core specification should be leveraged where possible to inform the reader of your specification.
-
-IHE FHIR based profiles should reference the [ITI Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html) section 8 Mobile Security and Privacy Considerations base when appropriate.
-
-IHE Document Content profiles can reference the security and privacy provided by the Document Sharing infrastructure as directly grouped or possibly to be grouped.
-
-   While it is not a requirement that any given specification or system be
-   immune to all forms of attack, it is still necessary for authors of specifications to
-   consider as many forms as possible.  Part of the purpose of the
-   Security and Privacy Considerations section is to explain what attacks have been
-   considered and what countermeasures can be applied to defend against them.
-
-   There should be a clear description of the kinds of threats on the
-   described specification.  This should be approached as an
-   effort to perform "due diligence" in describing all known or
-   foreseeable risks and threats to potential implementers and users.
-
-Authors MUST describe:
-
-* which attacks have been considered and addressed in the specification
-* which attacks have been considered but not addressed in the specification
-* what could be done in system design, system deployment, or user training
-
-   At least the following forms of attack MUST be considered:
-   eavesdropping, replay, message insertion, deletion, modification, and
-   man-in-the-middle.  Potential denial of service attacks MUST be
-   identified as well.  If the specification incorporates cryptographic
-   protection mechanisms, it should be clearly indicated which portions
-   of the data are protected and what the protections are (i.e.,
-   integrity only, confidentiality, and/or endpoint authentication,
-   etc.).  Some indication should also be given to what sorts of attacks
-   the cryptographic protection is susceptible.  Data which should be
-   held secret (keying material, random seeds, etc.) should be clearly
-   labeled.
-
-   If the specification involves authentication, particularly user-host
-   authentication, the security of the authentication method MUST be
-   clearly specified.  That is, authors MUST document the assumptions
-   that the security of this authentication method is predicated upon.
-
-   The threat environment addressed by the Security and Privacy Considerations
-   section MUST at a minimum include deployment across the global
-   Internet across multiple administrative boundaries without assuming
-   that firewalls are in place, even if only to provide justification
-   for why such consideration is out of scope for the protocol.  It is
-   not acceptable to only discuss threats applicable to LANs and ignore
-   the broader threat environment.  In
-   some cases, there might be an Applicability Statement discouraging
-   use of a technology or protocol in a particular environment.
-   Nonetheless, the security issues of broader deployment should be
-   discussed in the document.
-
-   There should be a clear description of the residual risk to the user
-   or operator of that specification after threat mitigation has been
-   deployed.  Such risks might arise from compromise in a related
-   specification (e.g., IPsec is useless if key management has been
-   compromised), from incorrect implementation, compromise of the
-   security technology used for risk reduction (e.g., a cipher with a
-   40-bit key), or there might be risks that are not addressed by the
-   specification (e.g., denial of service attacks on an
-   underlying link protocol).  Particular care should be taken in
-   situations where the compromise of a single system would compromise
-   an entire protocol.  For instance, in general specification designers
-   assume that end-systems are inviolate and don't worry about physical
-   attack.  However, in cases (such as a certificate authority) where
-   compromise of a single system could lead to widespread compromises,
-   it is appropriate to consider systems and physical security as well.
-
-   There should also be some discussion of potential security risks
-   arising from potential misapplications of the specification or technology
-   described in the specification.  
-  
-This section also include specific considerations regarding Digital Signatures, Provenance, Audit Logging, and De-Identification.
-
-Where audit logging is specified, a StructureDefinition profile(s) should be included, and Examples of those logs might be included.
-
-<a name="other-grouping"> </a>
 
 ## XX.6 ToDo Cross-Profile Considerations
 
@@ -565,3 +606,9 @@ other profile acronym - other profile name
 A other profile actor name in other profile name might
 be grouped with a this profile actor name to describe
 benefit/what is accomplished by grouping.
+
+### mCSD
+The mCSD Profile supports querying for Endpoint(s) for Organizations. The Trust Anchor may store DID (Decentralized IDentifier) as endpoints for Jurisdictions. 
+### DSG
+IPS or other health documents being shared could be digitally signed using DSG.
+	
