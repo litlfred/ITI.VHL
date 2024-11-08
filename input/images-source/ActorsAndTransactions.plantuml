@@ -1,6 +1,33 @@
 @startuml
 skinparam svgDimensionStyle false
-agent "[[#client Client]]" as Client
-agent "[[#server Server]]" as Server
-Client -down-> Server : "go [[domain-YY.html Domain-YY]]"
+
+title Verifiable Health Link
+
+
+participant "VHL Requester" as Request
+participant "Trust Anchor" as TA
+participant "VHL Consumer" as Consume
+participant "VHL Creator" as Create1
+participant "VHL Responder" as Respond
+
+autonumber "<b>00:</b>"
+
+
+loop routine synchronization 
+  Consume -> TA : retrieves and caches all public keys\nfor VHL verification
+end
+destroy TA
+
+Request -> Create1  : request VHL enclosing health document\nwith selective disclosure,\ntime limits and passcode
+Create1 -> Request : issue and return VHL
+
+Consume -> Respond : retrieve VHLink Manifest [optional]
+Respond -> Consume : return VHLink Manifest
+
+Consume -> Respond : retrieve VHLink Clinical Data
+Respond -> Consume : return VHLink Clinical Data
+
+
+
+
 @enduml
