@@ -1,0 +1,20 @@
+@startuml
+skinparam svgDimensionStyle false
+hide footbox
+participant "VHL Sharer" as VHLS
+participant "VHL Holder" as VHLH
+participant "VHL Receiver" as VHLR
+
+activate VHLH
+activate VHLS
+
+
+VHLH -> VHLS : Generate VHL request [ITI-YY3]
+VHLS -> VHLH : Generate VHL response [ITI-YY3]
+
+activate VHLR
+VHLR -> VHLS : Request VHL Document request [ITI-YY5]
+VHLS -> VHLR : Request VHL Document response [ITI-YY5]
+
+
+@enduml
