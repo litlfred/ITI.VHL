@@ -1,0 +1,14 @@
+@startuml
+skinparam svgDimensionStyle false
+hide footbox
+participant "Trust Anchor" as TA
+participant "VHL Sharer" as VHLS
+participant "VHL Holder" as VHLH
+participant "VHL Receiver" as VHLR
+activate "Client"
+TA -> VHLS : 1. Request [domain-YY2]
+activate "Server"
+"Server" --> "Client" : 2. Go Response [domain-YY]
+deactivate "Client"
+deactivate "Server"
+@enduml

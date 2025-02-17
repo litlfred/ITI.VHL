@@ -1,14 +1,13 @@
 @startuml
 skinparam svgDimensionStyle false
 
-title Verifiable Health Link
+title Verifiable Health Links
 
 
-participant "VHL Requester" as Request
 participant "Trust Anchor" as TA
-participant "VHL Consumer" as Consume
-participant "VHL Creator" as Create1
-participant "VHL Responder" as Respond
+participant "VHL Holder" as Consume
+participant "VHL Receiver" as Request
+participant "VHL Sharer" as Sharer
 
 autonumber "<b>00:</b>"
 
