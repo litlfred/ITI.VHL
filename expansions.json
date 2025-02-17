@@ -1,0 +1,76 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "e61fb544-fa08-451a-9397-0d9f5bbdb216",
+  "meta" : {
+    "lastUpdated" : "2025-02-16T22:41:52.112-05:00"
+  },
+  "type" : "collection",
+  "entry" : [{
+    "fullUrl" : "https://profiles.ihe.net/ITI/VHL/ValueSet/ihe-ToDo-laughing-positions",
+    "resource" : {
+      "resourceType" : "ValueSet",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet </b></p><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion from tx.fhir.org based on Loinc v2.78</p><p>This value set contains 3 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"x-http://loinc.org-93013-1\"> </a>\u00a0\u00a0<a href=\"https://loinc.org/93013-1/\">93013-1</a></td><td>http://loinc.org</td><td>Sitting ability</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"x-http://loinc.org-60730-9\"> </a>\u00a0\u00a0<a href=\"https://loinc.org/60730-9/\">60730-9</a></td><td>http://loinc.org</td><td>Standing [TIMP]</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"x-http://loinc.org-85927-2\"> </a>\u00a0\u00a0<a href=\"https://loinc.org/85927-2/\">85927-2</a></td><td>http://loinc.org</td><td>Lying to sitting on side of bed - functional goal during assessment period [CMS Assessment]</td></tr></table></div>"
+      },
+      "url" : "https://profiles.ihe.net/ITI/VHL/ValueSet/ihe-ToDo-laughing-positions",
+      "version" : "0.0.1-current",
+      "name" : "IheToDoLaughing",
+      "title" : "The positions during laughing",
+      "status" : "draft",
+      "experimental" : true,
+      "date" : "2025-02-16T22:41:38-05:00",
+      "jurisdiction" : [{
+        "coding" : [{
+          "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code" : "001"
+        }]
+      }],
+      "expansion" : {
+        "identifier" : "urn:uuid:b05ba699-9455-4922-a6c6-05aaf3b761f3",
+        "timestamp" : "2025-02-16T22:42:00-05:00",
+        "total" : 3,
+        "offset" : 0,
+        "parameter" : [{
+          "name" : "count",
+          "valueInteger" : 1000
+        },
+        {
+          "name" : "offset",
+          "valueInteger" : 0
+        },
+        {
+          "name" : "excludeNested",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "used-valueset",
+          "valueUri" : "null"
+        },
+        {
+          "name" : "used-codesystem",
+          "valueUri" : "http://loinc.org|2.78"
+        },
+        {
+          "name" : "version",
+          "valueUri" : "http://loinc.org|2.78"
+        }],
+        "contains" : [{
+          "system" : "http://loinc.org",
+          "code" : "93013-1",
+          "display" : "Sitting ability"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "60730-9",
+          "display" : "Standing [TIMP]"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "85927-2",
+          "display" : "Lying to sitting on side of bed - functional goal during assessment period [CMS Assessment]"
+        }]
+      }
+    }
+  }]
+}

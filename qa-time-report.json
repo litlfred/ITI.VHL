@@ -1,0 +1,411 @@
+{
+  "date" : "Sun, 16 Feb, 2025 22:41:52 -0500",
+  "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
+  "files" : [
+    {
+      "name" : "/fsh-generated/resources/ImplementationGuide-ihe.iti.vhl.json",
+      "size" : 6842,
+      "processes" : [
+        {
+          "activity" : "load",
+          "start" : 13,
+          "length" : 5
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 13,
+          "length" : 2
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 13,
+          "length" : 194
+        },
+        {
+          "activity" : "validate",
+          "start" : 14,
+          "length" : 327
+        },
+        {
+          "activity" : "validate",
+          "start" : 14,
+          "length" : 1
+        },
+        {
+          "activity" : "generate1",
+          "start" : 14,
+          "length" : 59
+        },
+        {
+          "activity" : "generate2",
+          "start" : 17,
+          "length" : 45
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 24,
+          "length" : 2
+        },
+        {
+          "activity" : "scanExamplesForR5",
+          "start" : 27,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/CapabilityStatement-IHE.ToDo.client.json",
+      "size" : 2252,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 13,
+          "length" : 7
+        },
+        {
+          "activity" : "load",
+          "start" : 13,
+          "length" : 5
+        },
+        {
+          "activity" : "checkR4R4B",
+          "start" : 13,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 13,
+          "length" : 15
+        },
+        {
+          "activity" : "validate",
+          "start" : 14,
+          "length" : 8
+        },
+        {
+          "activity" : "validate",
+          "start" : 14,
+          "length" : 1
+        },
+        {
+          "activity" : "generate1",
+          "start" : 14,
+          "length" : 25
+        },
+        {
+          "activity" : "generate2",
+          "start" : 17,
+          "length" : 21
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/CapabilityStatement-IHE.ToDo.server.json",
+      "size" : 2254,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 13,
+          "length" : 6
+        },
+        {
+          "activity" : "load",
+          "start" : 13,
+          "length" : 3
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 13,
+          "length" : 11
+        },
+        {
+          "activity" : "validate",
+          "start" : 14,
+          "length" : 12
+        },
+        {
+          "activity" : "generate1",
+          "start" : 15,
+          "length" : 74
+        },
+        {
+          "activity" : "generate2",
+          "start" : 17,
+          "length" : 11
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 24,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Encounter-ex-encounter.json",
+      "size" : 509,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 13,
+          "length" : 7
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 13,
+          "length" : 133
+        },
+        {
+          "activity" : "validate",
+          "start" : 14,
+          "length" : 20
+        },
+        {
+          "activity" : "generate1",
+          "start" : 15,
+          "length" : 6
+        },
+        {
+          "activity" : "generate2",
+          "start" : 17,
+          "length" : 11
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Observation-ex-IHE-ToDo-laugh-0.json",
+      "size" : 2071,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 13,
+          "length" : 10
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 13,
+          "length" : 3
+        },
+        {
+          "activity" : "validate",
+          "start" : 14,
+          "length" : 13
+        },
+        {
+          "activity" : "generate1",
+          "start" : 15,
+          "length" : 10
+        },
+        {
+          "activity" : "generate2",
+          "start" : 17,
+          "length" : 13
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Patient-ex-patient.json",
+      "size" : 852,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 13,
+          "length" : 6
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 13,
+          "length" : 1
+        },
+        {
+          "activity" : "validate",
+          "start" : 14,
+          "length" : 6
+        },
+        {
+          "activity" : "generate1",
+          "start" : 15,
+          "length" : 7
+        },
+        {
+          "activity" : "generate2",
+          "start" : 17,
+          "length" : 10
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Practitioner-ex-author.json",
+      "size" : 419,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 13,
+          "length" : 6
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 13,
+          "length" : 1
+        },
+        {
+          "activity" : "validate",
+          "start" : 14,
+          "length" : 2
+        },
+        {
+          "activity" : "generate1",
+          "start" : 15,
+          "length" : 4
+        },
+        {
+          "activity" : "generate2",
+          "start" : 17,
+          "length" : 7
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/Practitioner-ex-practitioner.json",
+      "size" : 431,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 13,
+          "length" : 6
+        },
+        {
+          "activity" : "validate",
+          "start" : 14,
+          "length" : 3
+        },
+        {
+          "activity" : "generate1",
+          "start" : 15,
+          "length" : 5
+        },
+        {
+          "activity" : "generate2",
+          "start" : 17,
+          "length" : 5
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/StructureDefinition-IHE.ToDo.laugh.json",
+      "size" : 9592,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 13,
+          "length" : 7
+        },
+        {
+          "activity" : "load",
+          "start" : 13,
+          "length" : 10
+        },
+        {
+          "activity" : "generateSnapshots",
+          "start" : 13,
+          "length" : 58
+        },
+        {
+          "activity" : "load-configure",
+          "start" : 13,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 13,
+          "length" : 82
+        },
+        {
+          "activity" : "validate",
+          "start" : 14,
+          "length" : 446
+        },
+        {
+          "activity" : "checkConformanceResources",
+          "start" : 14,
+          "length" : 1
+        },
+        {
+          "activity" : "scanForUsageStats",
+          "start" : 14,
+          "length" : 2
+        },
+        {
+          "activity" : "validate",
+          "start" : 14,
+          "length" : 1
+        },
+        {
+          "activity" : "generate1",
+          "start" : 15,
+          "length" : 455
+        },
+        {
+          "activity" : "generate2",
+          "start" : 17,
+          "length" : 1867
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 24,
+          "length" : 15
+        },
+        {
+          "activity" : "scanExamplesForR5",
+          "start" : 27,
+          "length" : 1
+        }
+      ]
+    },
+    {
+      "name" : "fsh-generated/resources/ValueSet-ihe-ToDo-laughing-positions.json",
+      "size" : 946,
+      "processes" : [
+        {
+          "activity" : "loadResources",
+          "start" : 13,
+          "length" : 7
+        },
+        {
+          "activity" : "load",
+          "start" : 13,
+          "length" : 8
+        },
+        {
+          "activity" : "scan",
+          "start" : 13,
+          "length" : 1
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 13,
+          "length" : 45
+        },
+        {
+          "activity" : "validate",
+          "start" : 13,
+          "length" : 165
+        },
+        {
+          "activity" : "generate1",
+          "start" : 15,
+          "length" : 9
+        },
+        {
+          "activity" : "generate2",
+          "start" : 19,
+          "length" : 1545
+        },
+        {
+          "activity" : "generateValidationPack",
+          "start" : 24,
+          "length" : 1
+        }
+      ]
+    }
+  ]
+}

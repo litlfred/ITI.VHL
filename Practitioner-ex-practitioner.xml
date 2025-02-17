@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Practitioner xmlns="http://hl7.org/fhir">
+  <id value="ex-practitioner"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+    </security>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-Confidentiality"/>
+      <code value="N"/>
+    </security>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Practitioner ex-practitioner</b></p><a name="ex-practitioner"> </a><a name="hcex-practitioner"> </a><a name="ex-practitioner-en-US"> </a><p><b>telecom</b>: <a href="mailto:Practitioner@example.com">Practitioner@example.com</a></p></div>
+  </text>
+  <telecom>
+    <system value="email"/>
+    <value value="Practitioner@example.com"/>
+  </telecom>
+</Practitioner>

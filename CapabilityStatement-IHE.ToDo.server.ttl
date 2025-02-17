@@ -1,0 +1,97 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://profiles.ihe.net/ITI/VHL/CapabilityStatement/IHE.ToDo.server> a fhir:CapabilityStatement ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "IHE.ToDo.server"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CapabilityStatement IHE.ToDo.server</b></p><a name=\"IHE.ToDo.server\"> </a><a name=\"hcIHE.ToDo.server\"> </a><a name=\"IHE.ToDo.server-en-US\"> </a><h2 id=\"title\">IHE ToDo Server</h2><ul><li>Implementation Guide Version: 0.0.1-current </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>application/fhir+xml</code>, <code>application/fhir+json</code></li><li>Supported Patch Formats: </li><li>Published on: 2022-10-27 </li><li>Published by: IHE IT Infrastructure Technical Committee </li></ul><blockquote class=\"impl-note\"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id=\"rest\">FHIR RESTful Capabilities</h2><div class=\"panel panel-default\"><div class=\"panel-heading\"><h3 id=\"mode1\" class=\"panel-title\">Mode: <code>server</code></h3></div><div class=\"panel-body\"><div><p>ToDo Client provides capability to blah blah.</p>\n</div><div class=\"lead\"><em>Security</em></div><blockquote><div><p>Recommend <a href=\"https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html\">ATNA</a>, encouraged <a href=\"https://profiles.ihe.net/ITI/IUA/index.html\">IHE-IUA</a> or <a href=\"http://www.hl7.org/fhir/smart-app-launch/\">SMART-app-launch</a></p>\n</div></blockquote><div class=\"lead\"><em>Summary of System-wide Interactions</em></div><ul><li>Supports the <code>search-system</code>interaction.</li></ul></div></div><h3 id=\"resourcesCap1\">Capabilities by Resource/Profile</h3><h4 id=\"resourcesSummary1\">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class=\"bg-info\">R</span></b>ead, <b><span class=\"bg-info\">S</span></b>earch, <b><span class=\"bg-info\">U</span></b>pdate, and <b><span class=\"bg-info\">C</span></b>reate, are always shown, while <b><span class=\"bg-info\">VR</span></b>ead, <b><span class=\"bg-info\">P</span></b>atch, <b><span class=\"bg-info\">D</span></b>elete, <b><span class=\"bg-info\">H</span></b>istory on <b><span class=\"bg-info\">I</span></b>nstance, or <b><span class=\"bg-info\">H</span></b>istory on <b><span class=\"bg-info\">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class=\"table-responsive\"><table class=\"table table-condensed table-hover\"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class=\"text-center\"><b title=\"GET a resource (read interaction)\">R</b></th><th class=\"text-center\"><b title=\"GET all set of resources of the type (search interaction)\">S</b></th><th class=\"text-center\"><b title=\"PUT a new resource version (update interaction)\">U</b></th><th class=\"text-center\"><b title=\"POST a new resource (create interaction)\">C</b></th><th><b title=\"Required and recommended search parameters\">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href=\"#Observation1-1\">Observation</a></td><td>Supported Profiles<br/>  <a href=\"StructureDefinition-IHE.ToDo.laugh.html\">IHE ToDo Laugh Observation</a></td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\"></td><td class=\"text-center\"></td><td>_lastUpdated, _id, category, code, patient</td><td/><td/><td/></tr></tbody></table></div><hr/><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"Observation1-1\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: supported </span>Observation</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-4\"><span class=\"lead\">Core FHIR Resource</span><br/><a href=\"http://hl7.org/fhir/R4/observation.html\">Observation</a></div><div class=\"col-lg-4\"><span class=\"lead\">Reference Policy</span><br/></div><div class=\"col-lg-4\"><span class=\"lead\">Interaction summary</span><br/><ul><li>Supports <code>read</code>, <code>search-type</code>.</li></ul></div></div><p/><div class=\"row\"><div class=\"col-6\"><span class=\"lead\">Supported Profiles</span><p><a href=\"StructureDefinition-IHE.ToDo.laugh.html\">IHE ToDo Laugh Observation</a></p></div></div><p/><div class=\"row\"><div class=\"col-12\"><span class=\"lead\">Documentation</span><blockquote><div><p>ToDo transaction [ITI-00]</p>\n</div></blockquote></div></div><div class=\"row\"><div class=\"col-lg-7\"><span class=\"lead\">Search Parameters</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>When the resource version last changed</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>Logical id of this artifact</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>category</td><td><code>token</code></td><td><div><p>The classification of the type of observation</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>code</td><td><code>token</code></td><td><div><p>The code of the observation type</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>patient</td><td><code>token</code></td><td><div><p>The subject that the observation is about (if patient)</p>\n</div></td></tr></tbody></table></div><div class=\"col-lg-5\"> </div></div></div></div></div></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://profiles.ihe.net/ITI/VHL/CapabilityStatement/IHE.ToDo.server"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.0.1-current"] ; # 
+  fhir:name [ fhir:v "IHE_ToDo_supplier"] ; # 
+  fhir:title [ fhir:v "IHE ToDo Server"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2022-10-27"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "IHE IT Infrastructure Technical Committee"] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.ihe.net/ihe_domains/it_infrastructure/" ]
+     ] )
+  ] [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "iti@ihe.net" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "IHE IT Infrastructure Technical Committee" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "iti@ihe.net" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CapabilityStatement for Server Actor.\n\nExplain\n- blah\n- blah"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "001" ]
+     ] )
+  ] ) ; # 
+  fhir:kind [ fhir:v "requirements"] ; # 
+  fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
+  fhir:format ( [ fhir:v "application/fhir+xml"] [ fhir:v "application/fhir+json"] ) ; # 
+  fhir:rest ( [
+     fhir:mode [ fhir:v "server" ] ;
+     fhir:documentation [ fhir:v "ToDo Client provides capability to blah blah." ] ;
+     fhir:security [
+       fhir:description [ fhir:v "Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-app-launch](http://www.hl7.org/fhir/smart-app-launch/)" ]
+     ] ;
+     fhir:resource ( [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:supportedProfile ( [
+         fhir:v "https://profiles.ihe.net/ITI/VHL/StructureDefinition/IHE.ToDo.laugh"^^xsd:anyURI ;
+         fhir:link <https://profiles.ihe.net/ITI/VHL/StructureDefinition/IHE.ToDo.laugh>
+       ] ) ;
+       fhir:documentation [ fhir:v "ToDo transaction [ITI-00]" ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "search-type" ]
+       ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "_lastUpdated" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "When the resource version last changed" ]
+       ] [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Logical id of this artifact" ]
+       ] [
+         fhir:name [ fhir:v "category" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The classification of the type of observation" ]
+       ] [
+         fhir:name [ fhir:v "code" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The code of the observation type" ]
+       ] [
+         fhir:name [ fhir:v "patient" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The subject that the observation is about (if patient)" ]
+       ] )
+     ] ) ;
+     fhir:interaction ( [
+       fhir:code [ fhir:v "search-system" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

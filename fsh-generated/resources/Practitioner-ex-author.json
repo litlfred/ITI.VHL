@@ -1,0 +1,22 @@
+{
+  "resourceType": "Practitioner",
+  "id": "ex-author",
+  "meta": {
+    "security": [
+      {
+        "code": "HTEST",
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason"
+      },
+      {
+        "code": "N",
+        "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality"
+      }
+    ]
+  },
+  "telecom": [
+    {
+      "system": "email",
+      "value": "Author@example.com"
+    }
+  ]
+}

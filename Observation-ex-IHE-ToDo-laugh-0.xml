@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="ex-IHE-ToDo-laugh-0"/>
+  <meta>
+    <profile value="https://profiles.ihe.net/ITI/VHL/StructureDefinition/IHE.ToDo.laugh"/>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+    </security>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation ex-IHE-ToDo-laugh-0</b></p><a name="ex-IHE-ToDo-laugh-0"> </a><a name="hcex-IHE-ToDo-laugh-0"> </a><a name="ex-IHE-ToDo-laugh-0-en-US"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/observation-category activity}">Activity</span></p><p><b>code</b>: <span title="Codes:{http://loinc.org 71344-6}, {http://snomed.info/sct 288535006}">I have been able to laugh and see the funny side of things in the past 7 days [EPDS]</span></p><p><b>subject</b>: <a href="Patient-ex-patient.html">Jack Smith  Other, DoB: 1923-07-25</a></p><p><b>effective</b>: 2023-12-01 08:42:50-0500</p><p><b>performer</b>: <a href="Practitioner-ex-author.html">Practitioner: telecom = Author@example.com</a></p><p><b>note</b>: a minimal blood pressure</p><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://loinc.org 97379-2}">XR Humerus - left AP</span></p><p><b>value</b>: 140 PercentNormal<span style="background: LightGoldenRodYellow"> (Details: UCUM  code% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 367475009}">Lesion of ulnar nerve</span></p><p><b>value</b>: baseball</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 404641004}">Giddiness</span></p><p><b>value</b>: can't breath</p></blockquote></div>
+  </text>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="activity"/>
+      <display value="Activity"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="71344-6"/>
+      <display value="I have been able to laugh and see the funny side of things in the past 7 days [EPDS]"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="288535006"/>
+      <display value="Finding relating to laughing"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/ex-patient"/>
+  </subject>
+  <effectiveDateTime value="2023-12-01T08:42:50-05:00"/>
+  <performer>
+    <reference value="Practitioner/ex-author"/>
+  </performer>
+  <note>
+    <text value="a minimal blood pressure"/>
+  </note>
+  <component>
+    <code>
+      <coding>
+        <system value="http://loinc.org"/>
+        <code value="97379-2"/>
+        <display value="XR Humerus - left AP"/>
+      </coding>
+    </code>
+    <valueQuantity>
+      <value value="140"/>
+      <unit value="PercentNormal"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="%"/>
+    </valueQuantity>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="367475009"/>
+        <display value="Lesion of ulnar nerve"/>
+      </coding>
+    </code>
+    <valueString value="baseball"/>
+  </component>
+  <component>
+    <code>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="404641004"/>
+        <display value="Giddiness"/>
+      </coding>
+    </code>
+    <valueString value="can't breath"/>
+  </component>
+</Observation>

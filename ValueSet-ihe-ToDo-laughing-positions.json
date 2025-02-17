@@ -1,0 +1,59 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "ihe-ToDo-laughing-positions",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet ihe-ToDo-laughing-positions</b></p><a name=\"ihe-ToDo-laughing-positions\"> </a><a name=\"hcihe-ToDo-laughing-positions\"> </a><a name=\"ihe-ToDo-laughing-positions-en-US\"> </a><ul><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://loinc.org/93013-1/\">93013-1</a></td><td>Sitting ability</td></tr><tr><td><a href=\"https://loinc.org/60730-9/\">60730-9</a></td><td>Standing</td></tr><tr><td><a href=\"https://loinc.org/85927-2/\">85927-2</a></td><td>Lying to sitting on side of bed - functional goal</td></tr></table></li></ul></div>"
+  },
+  "url" : "https://profiles.ihe.net/ITI/VHL/ValueSet/ihe-ToDo-laughing-positions",
+  "version" : "0.0.1-current",
+  "name" : "IheToDoLaughing",
+  "title" : "The positions during laughing",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2025-02-16T22:41:38-05:00",
+  "publisher" : "IHE IT Infrastructure Technical Committee",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.ihe.net/ihe_domains/it_infrastructure/"
+    }]
+  },
+  {
+    "telecom" : [{
+      "system" : "email",
+      "value" : "iti@ihe.net"
+    }]
+  },
+  {
+    "name" : "IHE IT Infrastructure Technical Committee",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "iti@ihe.net"
+    }]
+  }],
+  "description" : "These are the body positions that IHE ToDo laughing. The valueset is not a good one as it is being used in BodySite but it is not the site on the body but the position of the body... but this is just for fun.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "001"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "http://loinc.org",
+      "concept" : [{
+        "code" : "93013-1",
+        "display" : "Sitting ability"
+      },
+      {
+        "code" : "60730-9",
+        "display" : "Standing"
+      },
+      {
+        "code" : "85927-2",
+        "display" : "Lying to sitting on side of bed - functional goal"
+      }]
+    }]
+  }
+}

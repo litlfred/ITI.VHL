@@ -1,0 +1,74 @@
+[
+  {
+    "outputFile": "CapabilityStatement-IHE.ToDo.client.json",
+    "fshName": "IHE.ToDo.client",
+    "fshType": "Instance",
+    "fshFile": "capability.fsh",
+    "startLine": 1,
+    "endLine": 55
+  },
+  {
+    "outputFile": "CapabilityStatement-IHE.ToDo.server.json",
+    "fshName": "IHE.ToDo.server",
+    "fshType": "Instance",
+    "fshFile": "capability.fsh",
+    "startLine": 58,
+    "endLine": 112
+  },
+  {
+    "outputFile": "Encounter-ex-encounter.json",
+    "fshName": "ex-encounter",
+    "fshType": "Instance",
+    "fshFile": "ex-encounter.fsh",
+    "startLine": 3,
+    "endLine": 11
+  },
+  {
+    "outputFile": "Observation-ex-IHE-ToDo-laugh-0.json",
+    "fshName": "ex-IHE-ToDo-laugh-0",
+    "fshType": "Instance",
+    "fshFile": "observationLaugh.fsh",
+    "startLine": 96,
+    "endLine": 114
+  },
+  {
+    "outputFile": "Patient-ex-patient.json",
+    "fshName": "ex-patient",
+    "fshType": "Instance",
+    "fshFile": "ex-patient.fsh",
+    "startLine": 1,
+    "endLine": 26
+  },
+  {
+    "outputFile": "Practitioner-ex-author.json",
+    "fshName": "ex-author",
+    "fshType": "Instance",
+    "fshFile": "ex-encounter.fsh",
+    "startLine": 23,
+    "endLine": 31
+  },
+  {
+    "outputFile": "Practitioner-ex-practitioner.json",
+    "fshName": "ex-practitioner",
+    "fshType": "Instance",
+    "fshFile": "ex-encounter.fsh",
+    "startLine": 13,
+    "endLine": 21
+  },
+  {
+    "outputFile": "StructureDefinition-IHE.ToDo.laugh.json",
+    "fshName": "ToDoLaugh",
+    "fshType": "Profile",
+    "fshFile": "observationLaugh.fsh",
+    "startLine": 1,
+    "endLine": 83
+  },
+  {
+    "outputFile": "ValueSet-ihe-ToDo-laughing-positions.json",
+    "fshName": "IheToDoLaughing",
+    "fshType": "ValueSet",
+    "fshFile": "observationLaugh.fsh",
+    "startLine": 86,
+    "endLine": 93
+  }
+]

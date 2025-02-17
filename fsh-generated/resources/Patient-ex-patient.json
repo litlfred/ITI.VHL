@@ -1,0 +1,54 @@
+{
+  "resourceType": "Patient",
+  "id": "ex-patient",
+  "meta": {
+    "security": [
+      {
+        "code": "HTEST",
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason"
+      }
+    ]
+  },
+  "name": [
+    {
+      "use": "usual",
+      "family": "Smith",
+      "given": [
+        "Jack"
+      ]
+    },
+    {
+      "use": "old",
+      "family": "Schnidt",
+      "given": [
+        "John",
+        "Jacob",
+        "Jingle",
+        "Heimer"
+      ],
+      "period": {
+        "end": "1960"
+      }
+    },
+    {
+      "use": "official",
+      "family": "Smith",
+      "given": [
+        "John",
+        "Jacob",
+        "Jingleheimer"
+      ],
+      "period": {
+        "start": "1960-01-01"
+      }
+    }
+  ],
+  "gender": "other",
+  "birthDate": "1923-07-25",
+  "address": [
+    {
+      "state": "WI",
+      "country": "USA"
+    }
+  ]
+}

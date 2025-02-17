@@ -1,0 +1,9 @@
+[ex-author]: Practitioner-ex-author.html
+[ex-practitioner]: Practitioner-ex-practitioner.html
+[ex-encounter]: Encounter-ex-encounter.html
+[ex-IHE-ToDo-laugh-0]: Observation-ex-IHE-ToDo-laugh-0.html
+[ex-patient]: Patient-ex-patient.html
+[ToDoLaugh]: StructureDefinition-IHE.ToDo.laugh.html
+[IheToDoLaughing]: ValueSet-ihe-ToDo-laughing-positions.html
+[IHE.ToDo.client]: CapabilityStatement-IHE.ToDo.client.html
+[IHE.ToDo.server]: CapabilityStatement-IHE.ToDo.server.html

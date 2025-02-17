@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "IheToDoLaughing",
+  "id": "ihe-ToDo-laughing-positions",
+  "title": "The positions during laughing",
+  "description": "These are the body positions that IHE ToDo laughing. The valueset is not a good one as it is being used in BodySite but it is not the site on the body but the position of the body... but this is just for fun.",
+  "url": "https://profiles.ihe.net/ITI/VHL/ValueSet/ihe-ToDo-laughing-positions",
+  "experimental": true,
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "concept": [
+          {
+            "code": "93013-1",
+            "display": "Sitting ability"
+          },
+          {
+            "code": "60730-9",
+            "display": "Standing"
+          },
+          {
+            "code": "85927-2",
+            "display": "Lying to sitting on side of bed - functional goal"
+          }
+        ]
+      }
+    ]
+  }
+}

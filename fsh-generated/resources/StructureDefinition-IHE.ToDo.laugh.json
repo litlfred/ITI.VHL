@@ -1,0 +1,364 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "IHE.ToDo.laugh",
+  "url": "https://profiles.ihe.net/ITI/VHL/StructureDefinition/IHE.ToDo.laugh",
+  "version": "0.1.0",
+  "name": "ToDoLaugh",
+  "title": "IHE ToDo Laugh Observation",
+  "status": "draft",
+  "date": "2023-12-01",
+  "description": "A profile on the Observation that declares how ToDo will Create/Update laugh measurements.\n\n* must have vital-signs activity\n* must have LOINC#71344-6 which indicates this is an observation about laughing\n*  code AND SNOMED#288535006\n* must have effectiveDateTime\n* must not have a value[x]\n* must have two components\n* must have humorous and funny-bone component values \n* may have a giddy component\n* may have a position component\n* must have status at final\n* must point at the patient\n* may have a note (comment)\n* once created will or might have an id, versionId, lastUpdated, text, and identifier",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.implicitRules",
+        "path": "Observation.implicitRules",
+        "max": "0"
+      },
+      {
+        "id": "Observation.language",
+        "path": "Observation.language",
+        "max": "0"
+      },
+      {
+        "id": "Observation.contained",
+        "path": "Observation.contained",
+        "max": "0"
+      },
+      {
+        "id": "Observation.extension",
+        "path": "Observation.extension",
+        "max": "0"
+      },
+      {
+        "id": "Observation.modifierExtension",
+        "path": "Observation.modifierExtension",
+        "max": "0"
+      },
+      {
+        "id": "Observation.basedOn",
+        "path": "Observation.basedOn",
+        "max": "0"
+      },
+      {
+        "id": "Observation.partOf",
+        "path": "Observation.partOf",
+        "max": "0"
+      },
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "patternCode": "final"
+      },
+      {
+        "id": "Observation.category.coding",
+        "path": "Observation.category.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.category.coding:activity",
+        "path": "Observation.category.coding",
+        "sliceName": "activity",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "activity",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      },
+      {
+        "id": "Observation.code.coding",
+        "path": "Observation.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.code.coding:loincCode1",
+        "path": "Observation.code.coding",
+        "sliceName": "loincCode1",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "71344-6",
+          "system": "http://loinc.org"
+        }
+      },
+      {
+        "id": "Observation.code.coding:snomedCode2",
+        "path": "Observation.code.coding",
+        "sliceName": "snomedCode2",
+        "min": 0,
+        "max": "1",
+        "patternCoding": {
+          "code": "288535006",
+          "system": "http://snomed.info/sct"
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.focus",
+        "path": "Observation.focus",
+        "max": "0"
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.effective[x]:effectiveDateTime",
+        "path": "Observation.effective[x]",
+        "sliceName": "effectiveDateTime",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.issued",
+        "path": "Observation.issued",
+        "max": "0"
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "max": "0"
+      },
+      {
+        "id": "Observation.dataAbsentReason",
+        "path": "Observation.dataAbsentReason",
+        "max": "0"
+      },
+      {
+        "id": "Observation.interpretation",
+        "path": "Observation.interpretation",
+        "max": "0"
+      },
+      {
+        "id": "Observation.note",
+        "path": "Observation.note",
+        "max": "1"
+      },
+      {
+        "id": "Observation.bodySite",
+        "path": "Observation.bodySite",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://profiles.ihe.net/ITI/VHL/ValueSet/ihe-ToDo-laughing-positions"
+        }
+      },
+      {
+        "id": "Observation.method",
+        "path": "Observation.method",
+        "max": "0"
+      },
+      {
+        "id": "Observation.specimen",
+        "path": "Observation.specimen",
+        "max": "0"
+      },
+      {
+        "id": "Observation.device",
+        "path": "Observation.device",
+        "max": "0"
+      },
+      {
+        "id": "Observation.referenceRange",
+        "path": "Observation.referenceRange",
+        "max": "0"
+      },
+      {
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
+        "max": "0"
+      },
+      {
+        "id": "Observation.derivedFrom",
+        "path": "Observation.derivedFrom",
+        "max": "0"
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open",
+          "description": "funny factors"
+        },
+        "min": 2
+      },
+      {
+        "id": "Observation.component:humorous",
+        "path": "Observation.component",
+        "sliceName": "humorous",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:humorous.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "97379-2",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:humorous.value[x]",
+        "path": "Observation.component.value[x]",
+        "short": "express the quantity of humor received",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:funny-bone",
+        "path": "Observation.component",
+        "sliceName": "funny-bone",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:funny-bone.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "367475009",
+              "system": "http://snomed.info/sct"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:funny-bone.value[x]",
+        "path": "Observation.component.value[x]",
+        "short": "what hit the funny bone?",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:giddy",
+        "path": "Observation.component",
+        "sliceName": "giddy",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:giddy.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "404641004",
+              "system": "http://snomed.info/sct"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:giddy.value[x]",
+        "path": "Observation.component.value[x]",
+        "short": "explain how giddy",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:position",
+        "path": "Observation.component",
+        "sliceName": "position",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:position.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "40443-4",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:position.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/body-site"
+        }
+      }
+    ]
+  }
+}

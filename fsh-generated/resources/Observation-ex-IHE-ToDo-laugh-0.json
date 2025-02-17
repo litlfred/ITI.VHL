@@ -1,0 +1,98 @@
+{
+  "resourceType": "Observation",
+  "id": "ex-IHE-ToDo-laugh-0",
+  "meta": {
+    "security": [
+      {
+        "code": "HTEST",
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason"
+      }
+    ],
+    "profile": [
+      "https://profiles.ihe.net/ITI/VHL/StructureDefinition/IHE.ToDo.laugh"
+    ]
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "71344-6",
+        "system": "http://loinc.org",
+        "display": "I have been able to laugh and see the funny side of things in the past 7 days [EPDS]"
+      },
+      {
+        "code": "288535006",
+        "system": "http://snomed.info/sct",
+        "display": "Finding relating to laughing"
+      }
+    ]
+  },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "97379-2",
+            "system": "http://loinc.org",
+            "display": "XR Humerus - left AP"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 140,
+        "code": "%",
+        "system": "http://unitsofmeasure.org",
+        "unit": "PercentNormal"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "367475009",
+            "system": "http://snomed.info/sct",
+            "display": "Lesion of ulnar nerve"
+          }
+        ]
+      },
+      "valueString": "baseball"
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "404641004",
+            "system": "http://snomed.info/sct",
+            "display": "Giddiness"
+          }
+        ]
+      },
+      "valueString": "can't breath"
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "activity",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Activity"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "Patient/ex-patient"
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/ex-author"
+    }
+  ],
+  "effectiveDateTime": "2023-12-01T08:42:50-05:00",
+  "note": [
+    {
+      "text": "a minimal blood pressure"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://profiles.ihe.net/ITI/VHL/Observation/ex-IHE-ToDo-laugh-0> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ex-IHE-ToDo-laugh-0"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://profiles.ihe.net/ITI/VHL/StructureDefinition/IHE.ToDo.laugh"^^xsd:anyURI ;
+       fhir:link <https://profiles.ihe.net/ITI/VHL/StructureDefinition/IHE.ToDo.laugh>
+     ] ) ;
+     fhir:security ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActReason"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "HTEST" ]
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation ex-IHE-ToDo-laugh-0</b></p><a name=\"ex-IHE-ToDo-laugh-0\"> </a><a name=\"hcex-IHE-ToDo-laugh-0\"> </a><a name=\"ex-IHE-ToDo-laugh-0-en-US\"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category activity}\">Activity</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 71344-6}, {http://snomed.info/sct 288535006}\">I have been able to laugh and see the funny side of things in the past 7 days [EPDS]</span></p><p><b>subject</b>: <a href=\"Patient-ex-patient.html\">Jack Smith  Other, DoB: 1923-07-25</a></p><p><b>effective</b>: 2023-12-01 08:42:50-0500</p><p><b>performer</b>: <a href=\"Practitioner-ex-author.html\">Practitioner: telecom = Author@example.com</a></p><p><b>note</b>: a minimal blood pressure</p><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 97379-2}\">XR Humerus - left AP</span></p><p><b>value</b>: 140 PercentNormal<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 367475009}\">Lesion of ulnar nerve</span></p><p><b>value</b>: baseball</p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 404641004}\">Giddiness</span></p><p><b>value</b>: can't breath</p></blockquote></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "activity" ] ;
+       fhir:display [ fhir:v "Activity" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:71344-6 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "71344-6" ] ;
+       fhir:display [ fhir:v "I have been able to laugh and see the funny side of things in the past 7 days [EPDS]" ]
+     ] [
+       a sct:288535006 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "288535006" ] ;
+       fhir:display [ fhir:v "Finding relating to laughing" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://profiles.ihe.net/ITI/VHL/Patient/ex-patient> ;
+     fhir:reference [ fhir:v "Patient/ex-patient" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:dateTime ;
+     fhir:v "2023-12-01T08:42:50-05:00"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:link <https://profiles.ihe.net/ITI/VHL/Practitioner/ex-author> ;
+     fhir:reference [ fhir:v "Practitioner/ex-author" ]
+  ] ) ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "a minimal blood pressure" ]
+  ] ) ; # 
+  fhir:component ( [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:97379-2 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "97379-2" ] ;
+         fhir:display [ fhir:v "XR Humerus - left AP" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "140"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "PercentNormal" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "%" ]
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a sct:367475009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "367475009" ] ;
+         fhir:display [ fhir:v "Lesion of ulnar nerve" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:string ;
+       fhir:v "baseball"
+     ]
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a sct:404641004 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "404641004" ] ;
+         fhir:display [ fhir:v "Giddiness" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:string ;
+       fhir:v "can't breath"
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

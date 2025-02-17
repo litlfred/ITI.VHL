@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="e61fb544-fa08-451a-9397-0d9f5bbdb216"/>
+  <meta>
+    <lastUpdated value="2025-02-16T22:41:52.112-05:00"/>
+  </meta>
+  <type value="collection"/>
+  <entry>
+    <fullUrl value="https://profiles.ihe.net/ITI/VHL/ValueSet/ihe-ToDo-laughing-positions"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p class="res-header-id">
+              <b>Generated Narrative: ValueSet </b>
+            </p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion from tx.fhir.org based on Loinc v2.78</p>
+            <p>This value set contains 3 concepts</p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://loinc.org-93013-1"> </a>  
+                  <a href="https://loinc.org/93013-1/">93013-1</a>
+                </td>
+                <td>http://loinc.org</td>
+                <td>Sitting ability</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://loinc.org-60730-9"> </a>  
+                  <a href="https://loinc.org/60730-9/">60730-9</a>
+                </td>
+                <td>http://loinc.org</td>
+                <td>Standing [TIMP]</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="x-http://loinc.org-85927-2"> </a>  
+                  <a href="https://loinc.org/85927-2/">85927-2</a>
+                </td>
+                <td>http://loinc.org</td>
+                <td>Lying to sitting on side of bed - functional goal during assessment period [CMS Assessment]</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://profiles.ihe.net/ITI/VHL/ValueSet/ihe-ToDo-laughing-positions"/>
+        <version value="0.0.1-current"/>
+        <name value="IheToDoLaughing"/>
+        <title value="The positions during laughing"/>
+        <status value="draft"/>
+        <experimental value="true"/>
+        <date value="2025-02-16T22:41:38-05:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+            <code value="001"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:b05ba699-9455-4922-a6c6-05aaf3b761f3"/>
+          <timestamp value="2025-02-16T22:42:00-05:00"/>
+          <total value="3"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-valueset"/>
+            <valueUri value="null"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://loinc.org|2.78"/>
+          </parameter>
+          <parameter>
+            <name value="version"/>
+            <valueUri value="http://loinc.org|2.78"/>
+          </parameter>
+          <contains>
+            <system value="http://loinc.org"/>
+            <code value="93013-1"/>
+            <display value="Sitting ability"/>
+          </contains>
+          <contains>
+            <system value="http://loinc.org"/>
+            <code value="60730-9"/>
+            <display value="Standing [TIMP]"/>
+          </contains>
+          <contains>
+            <system value="http://loinc.org"/>
+            <code value="85927-2"/>
+            <display value="Lying to sitting on side of bed - functional goal during assessment period [CMS Assessment]"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+</Bundle>

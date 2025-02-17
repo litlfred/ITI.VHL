@@ -1,0 +1,22 @@
+{
+  "resourceType" : "Practitioner",
+  "id" : "ex-author",
+  "meta" : {
+    "security" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+      "code" : "HTEST"
+    },
+    {
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+      "code" : "N"
+    }]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Practitioner ex-author</b></p><a name=\"ex-author\"> </a><a name=\"hcex-author\"> </a><a name=\"ex-author-en-US\"> </a><p><b>telecom</b>: <a href=\"mailto:Author@example.com\">Author@example.com</a></p></div>"
+  },
+  "telecom" : [{
+    "system" : "email",
+    "value" : "Author@example.com"
+  }]
+}
