@@ -35,21 +35,24 @@ As a pre-condition to transactions ITI-YY3, ITI-YY4 and ITI-YY5, the VHL Receive
 
 
 <figure>
-  {%include usecase-exchange-key-material-processflow.svg%}
-  <p id="fX.X.X.X-1" class="figureTitle">Figure X.X.X.X-1: Use Case Issue and Utilize VHL Process Flow</p>
+  {%include usecase-exchange-key-material-interaction.svg%}
+  <p id="fX.X.X.X-2" class="figureTitle">Figure X.X.X.X-2: Use Case Issue and Utilize VHL for a (set of) Health Document(s) Process Flow</p>
 </figure>
 
 The process of a VHL Holder requesting a VHL to a set of health documents from a VHL Sharer and subsequently sharing them to a VHL Receiver is illusrated in Figure X.X.X.X-2.
 
 
+
+The interaction between a VHL Holder requesting a VHL to a single health document from a VHL Sharer and subsequently sharing them to a VHL Receiver is illusrated in Figure X.X.X.X-2.
+
+
 <figure>
-  {%include usecase-generate-use-vhl-processflow.svg%}
-  <p id="fX.X.X.X-2" class="figureTitle">Figure X.X.X.X-2: Use Case Issue and Utilize VHL for a Set of Health Documents Process Flow</p>
+  {%include usecase-generate-use-vhl-interaction.svg%}
+  <p id="fX.X.X.X-2" class="figureTitle">Figure X.X.X.X-2: Use Case Issue and Utilize VHL for a (set of) Health Document(s) Process Flow</p>
 </figure>
 
 
 
-The process of a VHL Holder requesting a VHL to a single health document from a VHL Sharer and subsequently sharing them to a VHL Receiver is illusrated in Figure X.X.X.X-3.
 
 
 <figure>
@@ -504,13 +507,13 @@ A QR code, with a VHL, is created and displayed to the patient for accessing and
 <a name="security-considerations"> </a>
 
 
-#### XX.4.2.2 Use Case \#2: Holder shares generated VHLink to HCP for access
+#### XX.4.2.2 Use Case \#2: Holder Generates and Uses a VHL 
 
 The patient provides access to their encrypted patient summary via the QR code on their mobile device or by sharing a secure VHL, (e.g., via email) at the point of care (e.g., walk-in clinic, emergency department).  The healthcare provider scans the QR code or accesses the VHL shared by the patient, addressing any security prompts, such as entering a passcode if required, and then may proceed to view/utilize and consume the patient summary.
 
-##### XX.4.2.2.1 simple name Use Case Description
+##### XX.4.2.2.1 Generate and Use VHL Case Description
 
-##### XX.4.2.2.2 simple name Process Flow
+##### XX.4.2.2.2 Generate and Use VHL Process Flow
 
 **Pre-conditions**:
 - Patient has a QR code or VHL with access to a patient summary.
@@ -535,12 +538,16 @@ The patient provides access to their encrypted patient summary via the QR code o
 
 HCP has access to Patient Summary.
 
+<figure>
+  {%include usecase-generate-use-vhl-processflow.svg%}
+  <p id="fX.X.X.X-2" class="figureTitle">Figure X.X.X.X-2: Use Case Issue and Utilize VHL for a (set of) Health Document(s) Process Flow</p>
+</figure>
 
-#### XX.4.2.3 Use Case \#3: Holder requests to destroy a VHLink
+#### XX.4.2.3 Use Case \#3: Exchange Key Material 
 
-##### XX.4.2.3.1 simple name Use Case Description
+##### XX.4.2.3.1 Exchange Key Material  Use Case Description
 
-##### XX.4.2.3.2 simple name Process Flow
+##### XX.4.2.3.2 Exchange Key Material  Process Flow
 
 **Pre-conditions**:
 
@@ -548,6 +555,10 @@ HCP has access to Patient Summary.
 
 **Post-conditions:**
 
+<figure>
+  {%include usecase-exchange-key-material-processflow.svg%}
+  <p id="fX.X.X.X-1" class="figureTitle">Figure X.X.X.X-1: Use Case Issue and Utilize VHL Process Flow</p>
+</figure>
 
 #### XX.4.2.4 Use Case \#4: Holder requests to destroy a VHLink
 
