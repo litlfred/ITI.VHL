@@ -595,7 +595,8 @@ The World Health Organization (WHO) operates a trust network for use by public s
 ##### XX.4.2.5.2 Pan-American Highway for Health Use Case Description
 
 - no cross-jurisidictional pre-coordination / consent workflow
-- 
+- https://publications.iadb.org/en/publications/english/viewer/Report-Caribbean-Connect-Building-the-Pan-American-Highway-for-Digital-Health.pdf PH4H 
+  -  Leverage the PH4H initiative to develop standardized clinical documents, including vaccine certificates, patient summaries, and clinical reports • Leverage the HIS - TSF to develop and share technical resources and artefacts (e.g. reference architectures, policy templates, standards templates, etc.) Partnerships • Engage in global digital initiatives , such as the WHO’s Global Digital Health Certification Network (GDHCN) to increase interoperability and cohesion on a global scale 
 
 <figure>
   {%include paho-diagram.png%}
