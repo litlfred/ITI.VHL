@@ -172,18 +172,18 @@ Options that may be selected for each actor in this implementation guide, are li
 
 <p id ="tXX.1-1" class="tableTitle">Table XX.2-1: Actor Options</p>
 
-|              |                 |
-|--------------|-----------------|
-| Actor        | Option Name     |
-| VHL Receiver | Verify Document |
-| VHL Sharer   | Record Consent  |
-|              | Audit Event     |
+|              |                           |
+|--------------|---------------------------|
+| Actor        | Option Name               |
+| VHL Receiver | Verify Document Signature |
+| VHL Sharer   | Record Consent            |
+|              | Audit Event               |
 {: .grid}
 
 
-### XX.2.1 Verify Document Option
+### XX.2.1 Verify Document Signature Option
 
-In this option the VHL Receiver, after receipt of a digitally signed document from a VHL Sharer, shall verify that digtial singature using previosuly retrieved PKI material.  
+In this option the VHL Receiver, after receipt of a digitally signed document from a VHL Sharer, shall verify the digtial signature using previosuly retrieved PKI material.  This key material may or may not be distributed under the same trust network under which the VHL was distributed.  This key material may or may not be the same key material that was used to verify the VHL.
 
 See cross-profile considerations for a discussion of the relationship of this option to the IHE Document Signature profile.
 
@@ -755,30 +755,17 @@ VHL is a building block that is meant to be used together with added security me
 - Before a Receiver Application initiates a VHL request, it should be able to determine the provenance of the VHL that it was presented. 
 
 
-## XX.6 ToDo Cross-Profile Considerations
+## XX.6 Cross-Profile Considerations
 
 This section is informative, not normative. It is intended to put
 this profile in context with other profiles. Any required groupings
-should have already been described above. Brief descriptions can go
-directly into this section; lengthy descriptions should go into an
-appendix. Examples of this material include ITI Cross Community Access
-(XCA) Grouping Rules (Section 18.2.3), the Radiology associated profiles
-listed at wiki.ihe.net, or ITI Volume 1 Appendix E "Cross Profile
-Considerations", and the "See Also" sections Radiology Profile
-descriptions on the wiki such as
-<http://wiki.ihe.net/index.php/Scheduled_Workflow#See_Also>. If this
-section is left blank, add "Not applicable."
+should have already been described above.
 
-Consider using a format such as the following:
 
-other profile acronym - other profile name
-
-A other profile actor name in other profile name might
-be grouped with a this profile actor name to describe
-benefit/what is accomplished by grouping.
-
-### mCSD
+### mCSD - Mobile Care Services Discovery 
 The mCSD Profile supports querying for Endpoint(s) for Organizations. The Trust Anchor may store DID (Decentralized IDentifier) as endpoints for Jurisdictions.
-### DSG
-IPS or other health documents being shared could be digitally signed using DSG under the Verify Document Signature Option.
+### DSGj - JSON Document Signature
+<TO DO: insert content> 
+### DSG - Document Signature
+<TO DO: insert>
 	
