@@ -605,8 +605,9 @@ Challenges:
 - planning for expansion to umrah and general tourism, will not be able to pre-record consent
 
 <figure>
-  {%include hajj-diagram.png%}
-  <p id="fX.X.X.X-2" class="figureTitle">Figure X.X.X.X-2: Hajj Pilgrimage</p>
+  <div>
+  <img src="hajj-diagram.png" caption="Figure X.X.X.X-2: Hajj Pilgrimage"/>
+  </div>
 </figure>
 
 
@@ -639,8 +640,7 @@ While there currently there is no single legal framework that broadly enables da
 
 
 <figure>
-  {%include PH4H.png%}
-  <p id="fX.X.X.X-2" class="figureTitle">Figure X.X.X.X-2: Pan-American Highway for Digital Health Goals</p>
+  <img src="PH4h.png" caption="Figure X.X.X.X-2: Pan-American Highway for Digital Health Goals"/>
 </figure>
 
 
