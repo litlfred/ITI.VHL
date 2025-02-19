@@ -1,4 +1,4 @@
-
+A
 As an individal moves within or across jurisidicional boundaries, they may wish to provide access to clinical anor other health related documents to a set of trusted parties who are authorized to access that individual's health documents. The individual may wish to grant access to a single health document or a set of related health documents. 
 
 
@@ -29,6 +29,7 @@ This section defines the actors, transactions, and/or content modules in this pr
   * [Generate VHL](ITI-YY3.html)
   * [Request VHL Documents](ITI-YY4.html)
   * [Request VHL Document](ITI-YY5.html)
+  * [Provide VHL](ITI-YY6.html)
 
 
 As a pre-condition to transactions ITI-YY3, ITI-YY4 and ITI-YY5, the VHL Receiver and VHL Sharer must exchange the appropriate PKI in order to verify their trust relationship at the time of the utlization of the VHL.  As the identities of the VHL Receiver and VHL Sharer are not directly know to each other in advance of a request to utilize a VHL, the VHL Receiver and VHL Sharer publish and retrieve key material from a third party, the Trust Anchor.    This is illustrated in Figure X.X.X.X-1
@@ -64,8 +65,10 @@ The interaction between a VHL Holder requesting a VHL to a single health documen
 | Trust Anchor | Publish PKI Material         | Responder              | R          | ITI TF-2: YY1 |
 |              | Retrieve PKI Material        | Responder              | R          | ITI TF-2: YY2 |
 | VHL Holder   | Generate VHL                 | Initiator              | R          | ITI TF-2: YY3 |
+|              | Provide VHL                  | Initiator              | R          | ITI TF-2: YY6 |
 | VHL Receiver | Publish PKI Material         | Initiator              | R          | ITI TF-2: YY1 |
 |              | Retrieve PKI Material        | Initiator              | R          | ITI TF-2: YY2 |
+|              | Provide VHL                  | Requester              | R          | ITI TF-2: YY6 |
 |              | Request VHL Documents        | Initiator              | R          | ITI TF-2: YY4 |
 |              | Request VHL Document         | Initiator              | R          | ITI TF-2: YY5 |
 | VHL Sharer   | Publish PKI Material         | Initiator              | R          | ITI TF-2: YY1 |
@@ -141,7 +144,7 @@ For more details see the detailed [transaction description](ITI-YY3.html)
 
 #### XX.1.2.4 Request VHL Documents
 
-This transactions is used by a VHL Receiver to request a set of health documents from a VHL Sharer.  This transaction should be conducted in such a manner that the VHL Receiver and VHL Sharer can validate one another's participation in the same trust network. The VHL Sharer shall optionally be able to record an audit event for the access of the folder by the VHL Receiver upon the transaction request under the Audit Event option.
+This transactions is initiated by a VHL Receiver to request a set of health documents from a VHL Sharer.  This transaction should be conducted in such a manner that the VHL Receiver and VHL Sharer can validate one another's participation in the same trust network. The VHL Sharer shall optionally be able to record an audit event for the access of the folder by the VHL Receiver upon the transaction request under the Audit Event option.
 
 
 For more details see the detailed [transaction description](ITI-YY4.html)
@@ -149,9 +152,17 @@ For more details see the detailed [transaction description](ITI-YY4.html)
 
 #### XX.1.2.5 Request VHL Document
 
-This transactions is used by a VHL Receiver to request a single health document from a VHL Sharer.  This transaction should be conducted in such a manner that the VHL Receiver and VHL Sharer can validate one another's participation in the same trust network.  The VHL Receiver shall optionally be able to validate that the veracity of the health document received through this transaction under the Verify Document Signature option.  The VHL Sharer shall optionally be able to record an audit event for the access of the folder by the VHL Receiver upon the transaction request under the Audit Event option.
+This transactions is initiated by a VHL Receiver to request a single health document from a VHL Sharer.  This transaction should be conducted in such a manner that the VHL Receiver and VHL Sharer can validate one another's participation in the same trust network.  The VHL Receiver shall optionally be able to validate that the veracity of the health document received through this transaction under the Verify Document Signature option.  The VHL Sharer shall optionally be able to record an audit event for the access of the folder by the VHL Receiver upon the transaction request under the Audit Event option.
+
+For more details see the detailed [transaction description](ITI-YY4.html)
 
 
+#### XX.1.2.6 Provide VHL
+
+This transacation is initiated by a VHL Holder to transmit a VHL to the VHL Receiver.   Depending on the use case and context, the payload comprising the VHL may be rendered/serialized and transmitted through various mechanisms, for example as a QR-code, Verifiable Credentials, bluetooth or near-field communication protocols.  These mechanisms are described in [Volume 3](volume-3.html)
+
+
+For more details see the detailed [transaction description](ITI-YY4.html)
 
 <a name="actor-options"> </a>
 
