@@ -600,20 +600,30 @@ During the Hajj pilgrimage the Kingdom of Saudi Arabia (KSA) hosts approximately
 
 Starting with Hajj XXXX, in 2024, pilgrims from Oman, Malaysia and Indonesia were able to share their health records utilizing the International Patient Summary (IPS) with verification of health documents provided through the GDHCN infrastructure.
 
-Pilgrims begin their journey in their home country where they receive a health check and are educated on the use of QR codes (a version of Verifiable Health Links) and provide the consent to share their health records.  There are in fact two notions of consent recorded: one for their home country in which they agree that health records from their home country can be shared with appropriate authorities during Hajj, and the second is to permit utilization of these health records within the Saudi System. These consent records are recorded into the IPS Advanced Directives section and are included with the IPS when it is shared.  
+Pilgrims begin their journey in their home country where they receive a health check and are educated on the use of QR codes (a version of Verifiable Health Links) and provide the consent to share their health records.  This consent may be provided verbally or recorded digitally.  When recorded, there are two notions of consent recorded: 
+- for their home country in which they agree that health records from their home country can be shared with appropriate authorities during Hajj
+- for KSA is to permit utilization of these health records within the Saudi System. These consent records are recorded into the IPS Advanced Directives section and are included with the IPS when it is shared.  
 
-Depending on the digital infrastructure pilgrim's origin country and digital capabilities (e.g. access to smart phones) of the pilgrim's origin country, the verifable health link may be printed on the pilgrim's card so that a static QR code is needed,  or the QR code is provided through a national health wallet, which allows a dynamic QR code generation.
+The verifiable health link is provided by their home jurisidiction during their health check as a QR code.   
+Depending on the digital infrastructure pilgrim's origin country, jurisidictional policies and digital capabilities (e.g. access to smart phones) of the pilgrim's origin country, the verifable health link may be:
+* generated and printed on the pilgrim's health card and distrubted to the pilgrim at the time of the health check; or
+* provisioned to the pilgrim through an existing digital health platform or wallet.
+For similar reasons, the verifiable health link may refer to:
+* an instance of the IPS rendered as a PDF;
+* an instance of the IPS rendered as JSON; or
+* a folder containing at least the PDF of JSON rendering of the IPS as well associated digital signatures.
 
 
-Once a VHL is shared by a pilgrim during a care enounter in KSA:
+During a care encounter in KSA, the pilgrim provides their verifiable health link as a QR code to their care provider.  Once a VHL is shared by a pilgrim during a care enounter in KSA:
 * the VHL is verified through the GDHCN infrastructure
 * an mTLS connection is established between the KSA EMRs and the origin country national infrastructure using key material exchanged via GDHCN
 * a manifest of IPS relataed files including a PDF and JSON renderings and associated digital signatures
 * The EMR retrieves the requisite files,
 
-Challenges:
-- pin is weakness, need to enable better options for future (biometrics?)
-- planning for expansion to umrah and general tourism, will not be able to pre-record consent
+Some of the challenges faced during the pilot implementation, though not necessarily to be taken up in this profile, include:
+- while not the main point of security, levergaing the PIN is a weakness, need to enable better options for future consideration (e.g. biometrics, other authorizaiton methods)
+- in planning for expansion to umrah and general tourism, there will not in general be a health check which presents some process challenges such as not having a encounter point to record consent prior to a visit.  
+- how to scale and automate some of the health checks  (e.g. are vaccinations sufficient) using verifiable health documents (e.g. the IPS). 
 
 <figure>
   <div>
