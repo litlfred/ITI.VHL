@@ -35,7 +35,7 @@ As a pre-condition to transactions ITI-YY3, ITI-YY4 and ITI-YY5, the VHL Receive
 
 
 <figure>
-  {%include usecase-exchange-key-material-interaction.svg%}
+  {%include trust_interaction.svg%}
   <p id="fX.X.X.X-2" class="figureTitle">Figure X.X.X.X-2: Use Case Issue and Utilize VHL for a (set of) Health Document(s) Process Flow</p>
 </figure>
 
@@ -47,7 +47,7 @@ The interaction between a VHL Holder requesting a VHL to a single health documen
 
 
 <figure>
-  {%include usecase-generate-use-vhl-interaction.svg%}
+  {%include vhl_interaction.svg%}
   <p id="fX.X.X.X-2" class="figureTitle">Figure X.X.X.X-2: Use Case Issue and Utilize VHL for a (set of) Health Document(s) Process Flow</p>
 </figure>
 
