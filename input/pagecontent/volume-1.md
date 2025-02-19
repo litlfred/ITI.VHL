@@ -10,7 +10,7 @@ The respective jurisidictions of the VHL Receiver and VHL Sharer may have regula
 
 The VHL leverages Public Key Infrastructure (PKI) as a means to verify trust amongst the actors and the veracity of artefacts.  As participants within a trust network, the VHL Receiver and VHL Sharer both share and receive PKI material with the Trust Anchor of the trust network.  The means by which the VHL Receiver and VHL Sharer establish trust with the Trust Anchor is beyond the scope of this profile.
 
-
+Note that VHLs and a SMART(R) Health Links (SHLs) are related concepts with different assumptions on the trust network.  In the VHL context a trust relationship is pre-established between the VHL Receiver and the VHL Sharer including a mutual PKI distribution mechanism. In the SHL context, there is no pre-existing trust relationship between the a SHL Receiver and SHL Sharer and the PKI material is distributed by the SHL Sharer at the time that the SHL Holder provides the SHL to the SHL Receiver.  
 
 <a name="actors-and-transactions"> </a>
 
