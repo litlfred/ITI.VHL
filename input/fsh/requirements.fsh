@@ -14,7 +14,7 @@ InstanceOf: ActorDefinition
 * name = "VHL Holder"
 * status = $pubStatus#active
 * publisher = "IHE"
-* type = $actorType#individual
+* type = $actorType#person
 
 Instance: VHLReceiver
 InstanceOf: ActorDefinition
