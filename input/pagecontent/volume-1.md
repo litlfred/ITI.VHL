@@ -67,7 +67,7 @@ The interaction between a VHL Holder requesting a VHL to a single health documen
 |              | Provide VHL                  | Initiator              | R          | ITI TF-2: YY6 |
 | VHL Receiver | Publish PKI Material         | Initiator              | R          | ITI TF-2: YY1 |
 |              | Retrieve PKI Material        | Initiator              | R          | ITI TF-2: YY2 |
-|              | Provide VHL                  | Requester              | R          | ITI TF-2: YY6 |
+|              | Provide VHL                  | Responder              | R          | ITI TF-2: YY6 |
 |              | Request VHL Documents        | Initiator              | R          | ITI TF-2: YY4 |
 |              | Request VHL Document         | Initiator              | R          | ITI TF-2: YY5 |
 | VHL Sharer   | Publish PKI Material         | Initiator              | R          | ITI TF-2: YY1 |
