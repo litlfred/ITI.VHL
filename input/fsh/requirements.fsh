@@ -1,44 +1,60 @@
-Alias: $pubStatus = http://hl7.org/fhir/publication-status
-Alias: $actorType = http://hl7.org/fhir/examplescenario-actor-type
 
 
-Instance: TrustAnchor
-InstanceOf: ActorDefinition
-* name = "Trust Anchor"
-* status = $pubStatus#active
-* publisher = "IHE"
-* type = $actorType#system
-
-Instance: VHLHolder
-InstanceOf: ActorDefinition
-* name = "VHL Holder"
-* status = $pubStatus#active
-* publisher = "IHE"
-* type = $actorType#person
-
-Instance: VHLReceiver
-InstanceOf: ActorDefinition
-* name = "VHL Receiver"
-* status = $pubStatus#active
-* publisher = "IHE"
-* type = $actorType#system
-
-Instance: VHLSharer
-InstanceOf: ActorDefinition
-* name = "VHL Sharer"
-* status = $pubStatus#active
-* publisher = "IHE"
-* type = $actorType#system
-
-
-
-Instance:   use-mtls-between-sharer-and-receiver
+Instance:   publish-pki-material
 InstanceOf: Requirements
-* title = "Use mTLS between VHL Sharer and VHL Receiver"
+* title = "Publish PKI material"
 * status = $pubStatus#active
 * publisher = "IHE"
-* description = "Require the use of an mTLS connection for all transactions between the VHL Sharer and VHL Recevier"
+* description = "Publish trust material to a Trust Anchor"
 * actor[+] = Canonical(VHLSharer)
 * actor[+] = Canonical(VHLReceiver)
+
+
+
+Instance:   receive-pki-material
+InstanceOf: Requirements
+* title = "Receive PKI material"
+* status = $pubStatus#active
+* publisher = "IHE"
+* description = "Receive trust material from a VHL Sharer or VHL Receiver, as trust network participants, for distribution amongst "
+* actor[+] = Canonical(TrustAnchor)
+
+
+
+Instance:   accept-mtls-connection
+InstanceOf: Requirements
+* title = "Accept mTLS"
+* status = $pubStatus#active
+* publisher = "IHE"
+* description = "Accept an mTLS in order to conduct further transactions under a secure channel"
+* actor[+] = Canonical(VHLSharer)
+
+
+Instance:   initiate-mtls-connection
+InstanceOf: Requirements
+* title = "Initiate mTLS"
+* status = $pubStatus#active
+* publisher = "IHE"
+* description = "Initiate an mTLS in order to conduct further transactions under a secure channel"
+* actor[+] = Canonical(VHLReceiver)
+
+
+Instance:   provide-a-vhl-to-a-receiver
+InstanceOf: Requirements
+* title = "Provide VHL"
+* status = $pubStatus#active
+* publisher = "IHE"
+* description = "Is able to provide a VHL authorization mechanism to a VHL Receiver"
+* actor[+] = Canonical(VHLHolder)
+
+
+Instance:   receive-a-vhl
+InstanceOf: Requirements
+* title = "Receive VHL"
+* status = $pubStatus#active
+* publisher = "IHE"
+* description = "Is able to receive a VHL authorization mechanism from a VHL Holder"
+* actor[+] = Canonical(VHLSharer)
+
 
 
