@@ -626,7 +626,7 @@ Some of the challenges faced during the pilot implementation, though not necessa
 
 <figure>
   <div>
-  <img src="hajj-diagram.png" caption="Figure X.X.X.X-2: Hajj Pilgrimage"/>
+  <img src="hajj-diagram.png" caption="Figure X.X.X.X-2: Hajj Pilgrimage" style="width:100%;"/>
   </div>
 </figure>
 
@@ -660,7 +660,7 @@ While there currently there is no single legal framework that broadly enables da
 
 
 <figure>
-  <img src="PH4h.png" caption="Figure X.X.X.X-2: Pan-American Highway for Digital Health Goals"/>
+  <img src="PH4H.png" caption="Figure X.X.X.X-2: Pan-American Highway for Digital Health Goals" style="width:100%;"/>
 </figure>
 
 
