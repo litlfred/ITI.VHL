@@ -2,6 +2,7 @@
 
 Instance:   publish-pki-material
 InstanceOf: Requirements
+Usage: #definition
 * title = "Publish PKI material"
 * status = $pubStatus#active
 * publisher = "IHE"
@@ -13,6 +14,7 @@ InstanceOf: Requirements
 
 Instance:   receive-pki-material
 InstanceOf: Requirements
+Usage: #definition
 * title = "Receive PKI material"
 * status = $pubStatus#active
 * publisher = "IHE"
@@ -23,6 +25,7 @@ InstanceOf: Requirements
 
 Instance:   accept-mtls-connection
 InstanceOf: Requirements
+Usage: #definition
 * title = "Accept mTLS"
 * status = $pubStatus#active
 * publisher = "IHE"
@@ -32,6 +35,7 @@ InstanceOf: Requirements
 
 Instance:   initiate-mtls-connection
 InstanceOf: Requirements
+Usage: #definition
 * title = "Initiate mTLS"
 * status = $pubStatus#active
 * publisher = "IHE"
@@ -41,6 +45,7 @@ InstanceOf: Requirements
 
 Instance:   provide-a-vhl-to-a-receiver
 InstanceOf: Requirements
+Usage: #definition
 * title = "Provide VHL"
 * status = $pubStatus#active
 * publisher = "IHE"
@@ -50,6 +55,7 @@ InstanceOf: Requirements
 
 Instance:   receive-a-vhl
 InstanceOf: Requirements
+Usage: #definition
 * title = "Receive VHL"
 * status = $pubStatus#active
 * publisher = "IHE"
