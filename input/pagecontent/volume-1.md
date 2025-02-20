@@ -1,4 +1,3 @@
-A
 As an individal moves within or across jurisidicional boundaries, they may wish to provide access to clinical anor other health related documents to a set of trusted parties who are authorized to access that individual's health documents. The individual may wish to grant access to a single health document or a set of related health documents. 
 
 
