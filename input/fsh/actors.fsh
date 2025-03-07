@@ -1,7 +1,8 @@
 Instance: TrustAnchor
 InstanceOf: ActorDefinition
 Usage: #definition
-* name = "Trust Anchor"
+* name = "TrustAnchor"
+* title = "Trust Anchor"
 * description = "Trust Anchor"
 * status = $pubStatus#active
 * publisher = "IHE"
@@ -10,7 +11,8 @@ Usage: #definition
 Instance: VHLHolder
 InstanceOf: ActorDefinition
 Usage: #definition
-* name = "VHL Holder"
+* name = "VHLHolder"
+* title = "VHL Holder"
 * description = "VHL Holder"
 * status = $pubStatus#active
 * publisher = "IHE"
@@ -19,7 +21,8 @@ Usage: #definition
 Instance: VHLReceiver
 InstanceOf: ActorDefinition
 Usage: #definition
-* name = "VHL Receiver"
+* name = "VHLReceiver"
+* title = "VHL Receiver"
 * description = "VHL Receiver"
 * status = $pubStatus#active
 * publisher = "IHE"
@@ -28,7 +31,8 @@ Usage: #definition
 Instance: VHLSharer
 InstanceOf: ActorDefinition
 Usage: #definition
-* name = "VHL Sharer"
+* name = "VHLSharer"
+* title = "VHL Sharer"
 * description = "VHL Sharer"
 * status = $pubStatus#active
 * publisher = "IHE"

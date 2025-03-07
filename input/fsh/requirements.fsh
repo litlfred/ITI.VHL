@@ -2,6 +2,7 @@
 Instance:   EstablishTrust
 InstanceOf: Requirements 
 Usage: #definition 
+* name = "EstablishTrust"
 * title = "Establish Trust"
 * status = $pubStatus#active
 * publisher = "IHE"
@@ -16,6 +17,7 @@ Usage: #definition
 Instance:   PublishPKIMaterial
 InstanceOf: Requirements
 Usage: #definition
+* name = "PublishPKIMaterial"
 * title = "Publish PKI material"
 * status = $pubStatus#active
 * publisher = "IHE"
@@ -38,6 +40,7 @@ Usage: #definition
 Instance:   ReceivePKIMaterial
 InstanceOf: Requirements
 Usage: #definition
+* name = "ReceivePKIMaterial"
 * title = "Receive PKI material"
 * status = $pubStatus#active
 * publisher = "IHE"
@@ -54,6 +57,7 @@ Usage: #definition
 Instance:   DistributePKIMaterial
 InstanceOf: Requirements
 Usage: #definition
+* name = "DistributePKIMaterial"
 * title = "Distribute PKI material"
 * status = $pubStatus#active
 * publisher = "IHE"
@@ -82,6 +86,7 @@ Usage: #definition
 Instance:   RetrievePKIMaterial
 InstanceOf: Requirements
 Usage: #definition
+* name = "RetrievePKIMaterial"
 * title = "Retrieve PKI material"
 * status = $pubStatus#active
 * publisher = "IHE"
@@ -89,10 +94,6 @@ Usage: #definition
 * derivedFrom = Canonical(EstablishTrust)
 * actor[+] = Canonical(VHLSharer)
 * actor[+] = Canonical(VHLReceiver)
-* statement[+].key = "initiate-request"
-* statement[=].label = "initiate-request"
-* statement[=].requirement = "Initiate a request PKI material from a distribution endpoint."
-
 
 
 
@@ -101,6 +102,7 @@ Usage: #definition
 Instance:   AcceptMTLSConnection
 InstanceOf: Requirements
 Usage: #definition
+* name = "AcceptMTLSConnection"
 * title = "Accept mTLS"
 * status = $pubStatus#active
 * publisher = "IHE"
@@ -112,6 +114,7 @@ Usage: #definition
 Instance:   InitiateMTLSConnection
 InstanceOf: Requirements
 Usage: #definition
+* name = "InitiateMTLSConnection"
 * title = "Initiate mTLS"
 * status = $pubStatus#active
 * publisher = "IHE"
@@ -123,6 +126,7 @@ Usage: #definition
 Instance:   ProvideVHL
 InstanceOf: Requirements
 Usage: #definition
+* name = "ProvideVHL"
 * title = "Provide VHL"
 * status = $pubStatus#active
 * publisher = "IHE"
@@ -133,6 +137,7 @@ Usage: #definition
 Instance:   ReceiveVHL
 InstanceOf: Requirements
 Usage: #definition
+* name = "ReceiveVHL"
 * title = "Receive VHL"
 * status = $pubStatus#active
 * publisher = "IHE"
@@ -141,3 +146,22 @@ Usage: #definition
 
 
 
+Instance:   IssueVHL
+InstanceOf: Requirements
+Usage: #definition
+* name = "IssueVHL"
+* experimental = true
+* title = "Issue VHL"
+* status = $pubStatus#active
+* publisher = "IHE"
+* description = "Issue a VHL to a Holder"
+* actor[+] = Canonical(VHLSharer)
+* statement[+].key = "collect-content"
+* statement[=].label = "collect content"
+* statement[=].requirement = "Collect any pre-existing content and/or generate any necessary content that will be referenced as part of the VHL."
+* statement[+].key = "generate-vhl-payload"
+* statement[=].label = "Generate VHL Payload"
+* statement[=].requirement = "Generate the payload for the VHL."
+* statement[+].key = "sign-VHL"
+* statement[=].label = "Sign HL"
+* statement[=].requirement = "Sign the VHL payload  to produce a Verifiable Health Link."
