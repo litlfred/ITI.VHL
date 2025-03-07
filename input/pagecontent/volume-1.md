@@ -20,17 +20,17 @@ Note that VHLs and a SMART(R) Health Links (SHLs) are related concepts with diff
 This section defines the actors, transactions, and/or content modules in this profile. Further information about actor and transaction definitions can be found in the IHE Technical Frameworks General Introduction [Appendix A: Actors](https://profiles.ihe.net/GeneralIntro/ch-A.html) and [Appendix B: Transactions](https://profiles.ihe.net/GeneralIntro/ch-B.html).
 
 * Actors
-  * [Trust Anchor](#trust-anchor)
-  * [VHL Holder](#vhl-holder)
-  * [VHL Receiver](#vhl-receiver)
-  * [VHL Sharer](#vhl-sharer)
+  * [Trust Anchor](#TrustAnchor)
+  * [VHL Holder](#VHLHolder)
+  * [VHL Receiver](#VHLReceiver)
+  * [VHL Sharer](#VHLSharer)
 * Transactions
-  * [Publish PKI Material](ITI-YY1.html)
-  * [Retrieve PKI Material](ITI-YY2.html)
-  * [Generate VHL](ITI-YY3.html)
-  * [Request VHL Documents](ITI-YY4.html)
-  * [Request VHL Document](ITI-YY5.html)
-  * [Provide VHL](ITI-YY6.html)
+  * [Publish PKI Material: todo](ITI-YY1.html)
+  * [Retrieve PKI Material: todo](ITI-YY2.html)
+  * [Generate VHL](generate_vhl.html)
+  * [Request VHL Documents: todo](ITI-YY4.html)
+  * [Request VHL Document: todo](ITI-YY5.html)
+  * [Provide VHL: todo](ITI-YY6.html)
 
 
 As a pre-condition to transactions ITI-YY3, ITI-YY4 and ITI-YY5, the VHL Receiver and VHL Sharer must exchange the appropriate PKI in order to verify their trust relationship at the time of the utlization of the VHL.  As the identities of the VHL Receiver and VHL Sharer are not directly know to each other in advance of a request to utilize a VHL, the VHL Receiver and VHL Sharer publish and retrieve key material from a third party, the Trust Anchor.    This is illustrated in Figure X.X.X.X-1
@@ -83,16 +83,15 @@ The interaction between a VHL Holder requesting a VHL to a single health documen
 ### XX.1.1 Actors
 The actors in this profile are described in more detail in the sections below.
 
-<a name="trust-anchor"> </a>
-
+<a name="TrustAnchor"> </a>
 #### XX.1.1.1 Trust Anchor
 
 The Trust Anchor receives, aggregates and distributes PKI material to the participants within a trust network, specifically the VHL Reciver and VHL Sharer.
 
-FHIR Capability Statement for [Trust Anchor](CapabilityStatement-IHE.ToDo.trust-anchor.html)
+FHIR Capability Statement for [Trust Anchor](CapabilityStatement-IHE.TrustAnchor.html)
 
-<a name="vhl-holder"> </a>
 
+<a name="VHLHolder"> </a>
 #### XX.1.1.2 VHL Holder
 
 
@@ -101,7 +100,7 @@ The VHL Holder is an individual that is holding an authorization mechanism, a VH
 FHIR Capability Statement for [VHL Holder](CapabilityStatement-IHE.ToDo.vhl-holder.html)
 
 
-<a name="vhl-receiver"> </a>
+<a name="VHLReceiver"> </a>
 #### XX.1.1.2 VHL Receiver
 
 
@@ -110,7 +109,7 @@ The VHL Receiver receives a VHL from a VHL Holder which it utilizes to request a
 FHIR Capability Statement for [VHL Receiver](CapabilityStatement-IHE.ToDo.vhl-receiver.html)
 
 
-<a name="vhl-sharer"> </a>
+<a name="VHLSharer"> </a>
 #### XX.1.1.2 VHL Sharer
 
 
@@ -128,6 +127,9 @@ This transactions is used by a VHL Receiver or VHL Sharer to publish PKI materia
 
 For more details see the detailed [transaction description](ITI-YY1.html)
 
+This transaction is captured as the following requirement:
+* [Publish PKI Material](Requirements-PublishPKIMaterial.html)
+
 
 #### XX.1.2.2 Retrieve PKI Material
 
@@ -135,12 +137,19 @@ This transactions is used by a VHL Receiver or VHL Sharer to retrieve PKI materi
 
 For more details see the detailed [transaction description](ITI-YY2.html)
 
+This transaction is captured as the following requirement:
+* [Retrieve PKI Material](Requirements-RetrievePKIMaterial.html)
+
 
 #### XX.1.2.3 Generate VHL
 
 This transactions is used by a VHL Holder to request that a VHL Sharer generate a VHL.  A VHL Sharer may optionally record the consent of the individual to share their information under the Record Consent option. A VHL Sharer may optionally create an audit trail of the creation of the VHL under the Audit Event option. The individual shall trust that VHL Sharer has been authorized by its jurisidiction to authorize and provide access to health documents.   
 
-For more details see the detailed [transaction description](ITI-YY3.html)
+For more details see the detailed [transaction description](generate_vhl.html)
+
+This transaction is captured as the following requirement:
+* [Generate VHL](Requirements-GenerateVHL.html)
+
 
 
 #### XX.1.2.4 Request VHL Documents
@@ -151,12 +160,18 @@ This transactions is initiated by a VHL Receiver to request a set of health docu
 For more details see the detailed [transaction description](ITI-YY4.html)
 
 
+This transaction is captured as the following requirement:
+* [Request VHL Documents](Requirements-RequestVHLDocuments.html)
+
+
 #### XX.1.2.5 Request VHL Document
 
 This transactions is initiated by a VHL Receiver to request a single health document from a VHL Sharer.  This transaction should be conducted in such a manner that the VHL Receiver and VHL Sharer can validate one another's participation in the same trust network.  The VHL Receiver shall optionally be able to validate that the veracity of the health document received through this transaction under the Verify Document Signature option.  The VHL Sharer shall optionally be able to record an audit event for the access of the folder by the VHL Receiver upon the transaction request under the Audit Event option.
 
 For more details see the detailed [transaction description](ITI-YY4.html)
 
+This transaction is captured as the following requirement:
+* [Request VHL Document](Requirements-RequestVHLDocument.html)
 
 #### XX.1.2.6 Provide VHL
 
@@ -164,6 +179,10 @@ This transacation is initiated by a VHL Holder to transmit a VHL to the VHL Rece
 
 
 For more details see the detailed [transaction description](ITI-YY4.html)
+
+
+This transaction is captured as the following requirement:
+* [Provide VHL](Requirements-Provide VHL.html)
 
 <a name="actor-options"> </a>
 
@@ -188,21 +207,34 @@ In this option the VHL Receiver, after receipt of a digitally signed document fr
 
 See cross-profile considerations for a discussion of the relationship of this option to the IHE Document Signature profile.
 
+
+This option is captured in the following business requirement:
+* [Verify Document Signature](Requirements-VerifyDocumentSignature.html)
+
+
+
 ### XX.2.2 Record Consent Option
 
 In this option the VHL Sharer acts a Consent Recorder from the Privacy Consent on FHIR (PCF) profile.  In this option, the VHL Sharer SHALL initiate a [Access Consent : ITI-108)(https://profiles.ihe.net/ITI/PCF/ITI-108.html)
 transaction as part of the Expected Actions after receipt of a Generate VHL request.   The Access Consent transaction is used to record the consent declarations by the VHL Holder for the sharing of the (set of) health document(s) by the VHL Sharer to any authorized VHL Receiver within the trust network for a specified use case.
 
+This option is captured in the following business requirement:
+* [Record Consent](Requirements-RecordConsent.html)
 
 
 ### XX.2.3 Audit Event Option
 
 In this option the VHL Sharer records an audit event for critical events in the access of health documents including:
 * Request for the generation of a VHL by a VHL Holder; and
-* Reuqest for access to a (set of) health document(s) by a VHL Receiver.
+* Request for access to a (set of) health document(s) by a VHL Receiver.
 
 
 <a name="required-groupings"> </a>
+
+This option is captured in the following business requirement:
+* [Record Access To Health Data](Requirements-RecordAccessToHealthData.html)
+
+
 
 ## XX.3 Required Actor Groupings
 
@@ -555,6 +587,10 @@ HCP has access to Patient Summary.
   <p id="fX.X.X.X-2" class="figureTitle">Figure X.X.X.X-2: Use Case Issue and Utilize VHL for a (set of) Health Document(s) Process Flow</p>
 </figure>
 
+This use case has the following business requirement:
+* [Establish Trust](Requirements-EstablishTrust.html)
+* [Record Access To Health Data](Requirements-RecordAccessToHealthData.html)
+
 
 #### XX.4.2.3 Use Case \#3: Exchange Key Material 
 
@@ -584,6 +620,9 @@ HCP has access to Patient Summary.
 **Main Flow**:
 
 **Post-conditions:**
+
+
+
 
 #### XX.4.2.5 Use Case \#5: WHO Global Digital Health Certification Network
 
@@ -632,6 +671,9 @@ Some of the challenges faced during the pilot implementation, though not necessa
   </div>
 </figure>
 
+This use case has the following business requirement:
+* [Establish Trust](Requirements-EstablishTrust.html)
+* [Create Trusted Channel](Requirements-CreateTrustedChannel.html)
 
 ##### XX.4.2.5.2 Pan-American Highway for Health Use Case Description
 
@@ -666,7 +708,35 @@ While there currently there is no single legal framework that broadly enables da
 </figure>
 
 
-#### XX.4.2.6 Use Case \#6: Smart Health Links
+This use case has the following business requirement:
+* [Establish Trust](Requirements-EstablishTrust.html)
+
+
+
+#### XX.4.2.6 Use Case \#6: EU Vaccination Card
+
+The [European Vaccination Card (EVC)](https://euvabeco.eu/news/european-vaccination-card-evc-a-citizen-held-card-to-foster-informed-decision-making-on-vaccination-and-improve-continuity-of-care-across-the-eu/) is a citizen-held card to foster informed decision-making on vaccination, and improve continuity of care across the EU.
+
+The EVC will allow "Member States to bilaterally verify the authenticity of digital records through an interoperable trust architecture. While similar to the EU Digital COVID Certificate in being a portable vaccination record, the EVC serves a different purpose. Unlike the certificate, which often fulfilled legal or health mandates, the EVC is specifically designed to empower individuals by granting them control over their vaccination information. This empowerment is crucial for ensuring continuity of care for those crossing borders or transitioning between healthcare systems."
+
+The EVC will operate in the context of the European Health Data Spaces that requires detailed information on access the health data to be recorded.
+
+<figure>
+  <div>
+  <img src="ehds_legal.png" caption="Figure X.X.X.X-2: European Health Data Spaces" style="width:100%;"/>
+  </div>
+</figure>
+
+
+
+This use case has the following business requirement:
+* [Record Access To Health Data](Requirements-RecordAccessToHealthData.html)
+
+
+
+
+
+#### XX.4.2.7 Use Case \#6: Smart Health Links
 <bold>Note:</bold>  Not sure if we want to include "Verifiable" health link as an option and Smart Health Link as another option.  If so, we should recap SHL use case here. (No pre-coordination of trust)
 
 ## XX.5 ToDo Security Considerations
