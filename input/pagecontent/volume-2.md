@@ -21,7 +21,7 @@ See requirement(s):
 
 <div>
 {% assign reqs = site.data.Requirements-IssueVHL %}
-  {% include requirements.liquid reqs=reqs %}
+  {% include requirements2.liquid reqs=reqs %}
 
 </div>
   
