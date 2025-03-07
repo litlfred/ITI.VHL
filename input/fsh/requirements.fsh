@@ -18,8 +18,31 @@ Usage: #definition
 * title = "Receive PKI material"
 * status = $pubStatus#active
 * publisher = "IHE"
-* description = "Receive trust material from a VHL Sharer or VHL Receiver, as trust network participants, for distribution amongst "
+* description = "Receive trust material from a VHL Sharer or VHL Receiver, as trust network participants, for distribution within the Turst Network"
 * actor[+] = Canonical(TrustAnchor)
+
+
+
+Instance:   distribute-pki-material
+InstanceOf: Requirements
+Usage: #definition
+* title = "Distribute PKI material"
+* status = $pubStatus#active
+* publisher = "IHE"
+* description = "Make received trust material available through a distrubution point to a VHL Sharer or VHL Receiver"
+* actor[+] = Canonical(TrustAnchor)
+
+
+Instance:   retrieve-pki-material
+InstanceOf: Requirements
+Usage: #definition
+* title = "Retrieve PKI material"
+* status = $pubStatus#active
+* publisher = "IHE"
+* description = "Retrieve PKI material from a distribution point"
+* actor[+] = Canonical(VHLSharer)
+* actor[+] = Canonical(VHLReceiver)
+
 
 
 
