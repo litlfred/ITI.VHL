@@ -38,11 +38,11 @@ Usage: #definition
 * actor[+] = Canonical(VHLSharer)
 
 
-Instance:   AuditEvent
+Instance:   AuditEventAccess
 InstanceOf: Requirements 
 Usage: #definition 
 * name = "AuditEvent"
-* title = "Audit Event"
+* title = "Audit Event - Accessed Health Data"
 * status = $pubStatus#active
 * publisher = "IHE"
 * description = "Record an event for audit purpose related to the issuance of a VHL.
@@ -55,11 +55,11 @@ In this option the VHL Sharer records an audit event for critical events in the 
 * actor[+] = Canonical(VHLSharer)
 
 
-Instance:   AuditEvent
+Instance:   AuditEventReceived
 InstanceOf: Requirements 
 Usage: #definition 
-* name = "AuditEvent"
-* title = "Audit Event"
+* name = "AuditEventReceived"
+* title = "Audit Event - Received Health Data"
 * status = $pubStatus#active
 * publisher = "IHE"
 * description = "Record an event for audit purpose related to the issuance of a VHL.
@@ -69,7 +69,7 @@ In this option the VHL Receiver records an audit event for critical events in th
 * retrieval of health data from the a VHL Sharer
 "
 * derivedFrom = Canonical(RecordAccessToHealthData)
-* actor[+] = Canonical(VHLReciver)
+* actor[+] = Canonical(VHLReceiver)
 
 
 
@@ -218,7 +218,7 @@ Usage: #definition
 * status = $pubStatus#active
 * publisher = "IHE"
 * description = "Accept an mTLS in order to conduct further transactions under a secure channel"
-* derivedFrom = Canonical(
+* derivedFrom = Canonical(EstablishTrust)
 * actor[+] = Canonical(VHLReceiver)
 * actor[+] = Canonical(VHLSharer)
 
