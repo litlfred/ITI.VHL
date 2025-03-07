@@ -1,5 +1,5 @@
 
-Instance:   establish-trust
+Instance:   EstablishTrust
 InstanceOf: Requirements 
 Usage: #definition 
 * title = "Establish Trust"
@@ -13,13 +13,14 @@ Usage: #definition
 
 
 
-Instance:   publish-pki-material
+Instance:   PublishPKIMaterial
 InstanceOf: Requirements
 Usage: #definition
 * title = "Publish PKI material"
 * status = $pubStatus#active
 * publisher = "IHE"
 * description = "Publish trust material to a Trust Anchor"
+* derivedFrom = Canonical(EstablishTrust)
 * actor[+] = Canonical(VHLSharer)
 * actor[+] = Canonical(VHLReceiver)
 * statement[+].key = "generate-private-public-key-pair"
@@ -34,7 +35,7 @@ Usage: #definition
 
 
 
-Instance:   receive-pki-material
+Instance:   ReceivePKIMaterial
 InstanceOf: Requirements
 Usage: #definition
 * title = "Receive PKI material"
@@ -49,13 +50,13 @@ Usage: #definition
 
 
 
-Instance:   distribute-pki-material
+Instance:   DistributePKIMaterial
 InstanceOf: Requirements
 Usage: #definition
 * title = "Distribute PKI material"
 * status = $pubStatus#active
 * publisher = "IHE"
-* description = "Make received trust material available through a distrubution point to a VHL Sharer or VHL Receiver"
+* description = "Make received trust material available through a distribution point to a VHL Sharer or VHL Receiver"
 * actor[+] = Canonical(TrustAnchor)
 * statement[+].key = "receive-pki-distribution-request"
 * statement[=].label = "Receive PKI distribution request"
@@ -76,7 +77,7 @@ Usage: #definition
 
 
 
-Instance:   retrieve-pki-material
+Instance:   RetrievePKIMaterial
 InstanceOf: Requirements
 Usage: #definition
 * title = "Retrieve PKI material"
@@ -94,7 +95,7 @@ Usage: #definition
 
 
 
-Instance:   accept-mtls-connection
+Instance:   AcceptMTLSConnection
 InstanceOf: Requirements
 Usage: #definition
 * title = "Accept mTLS"
@@ -104,7 +105,7 @@ Usage: #definition
 * actor[+] = Canonical(VHLSharer)
 
 
-Instance:   initiate-mtls-connection
+Instance:   InitiateMTLSConnection
 InstanceOf: Requirements
 Usage: #definition
 * title = "Initiate mTLS"
@@ -114,7 +115,7 @@ Usage: #definition
 * actor[+] = Canonical(VHLReceiver)
 
 
-Instance:   provide-a-vhl-to-a-receiver
+Instance:   ProvideVHL
 InstanceOf: Requirements
 Usage: #definition
 * title = "Provide VHL"
@@ -124,7 +125,7 @@ Usage: #definition
 * actor[+] = Canonical(VHLHolder)
 
 
-Instance:   receive-a-vhl
+Instance:   ReceiveVHL
 InstanceOf: Requirements
 Usage: #definition
 * title = "Receive VHL"
