@@ -42,6 +42,7 @@ Usage: #definition
 * status = $pubStatus#active
 * publisher = "IHE"
 * description = "Receive trust material from a VHL Sharer or VHL Receiver, as trust network participants, for distribution within the Trust Network"
+* derivedFrom = Canonical(EstablishTrust)
 * actor[+] = Canonical(TrustAnchor)
 * statement[+].key = "validate-trust-list"
 * statement[=].label = "Validate Trust List"
@@ -57,6 +58,7 @@ Usage: #definition
 * status = $pubStatus#active
 * publisher = "IHE"
 * description = "Make received trust material available through a distribution point to a VHL Sharer or VHL Receiver"
+* derivedFrom = Canonical(EstablishTrust)
 * actor[+] = Canonical(TrustAnchor)
 * statement[+].key = "receive-pki-distribution-request"
 * statement[=].label = "Receive PKI distribution request"
@@ -84,6 +86,7 @@ Usage: #definition
 * status = $pubStatus#active
 * publisher = "IHE"
 * description = "Retrieve PKI material from a distribution point"
+* derivedFrom = Canonical(EstablishTrust)
 * actor[+] = Canonical(VHLSharer)
 * actor[+] = Canonical(VHLReceiver)
 * statement[+].key = "initiate-request"
@@ -102,6 +105,7 @@ Usage: #definition
 * status = $pubStatus#active
 * publisher = "IHE"
 * description = "Accept an mTLS in order to conduct further transactions under a secure channel"
+* derivedFrom = Canonical(EstablishTrust)
 * actor[+] = Canonical(VHLSharer)
 
 
@@ -112,6 +116,7 @@ Usage: #definition
 * status = $pubStatus#active
 * publisher = "IHE"
 * description = "Initiate an mTLS in order to conduct further transactions under a secure channel"
+* derivedFrom = Canonical(EstablishTrust)
 * actor[+] = Canonical(VHLReceiver)
 
 
