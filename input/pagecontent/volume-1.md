@@ -1,4 +1,4 @@
-As an individal moves within or across jurisidicional boundaries, they may wish to provide access to clinical anor other health related documents to a set of trusted parties who are authorized to access that individual's health documents. The individual may wish to grant access to a single health document or a set of related health documents. 
+As an individual moves within or across jurisdictional boundaries, they may wish to provide access to clinical anor other health related documents to a set of trusted parties who are authorized to access that individual's health documents. The individual may wish to grant access to a single health document or a set of related health documents. 
 
 
 The Verifiable Health Link (VHL) profile defines protocols and patterns that allow the sharing of health documents in a auditable and verfiable manner within and across jurisdictional boundaries.   The VHL profile describes mechanisms, the VHLs, that an individual, the VHL Holder, uses to provide authorize access to their health records from an issuer, the VHL Sharer, to a third party, the VHL Receiver.  The means by which the VHL is held by the VHL Holder or shared by the VHL Holder to the VHL Receiver are beyond the scope of this profile.
@@ -9,7 +9,9 @@ The respective jurisidictions of the VHL Receiver and VHL Sharer may have regula
 
 The VHL leverages Public Key Infrastructure (PKI) as a means to verify trust amongst the actors and the veracity of artefacts.  As participants within a trust network, the VHL Receiver and VHL Sharer both share and receive PKI material with the Trust Anchor of the trust network.  The means by which the VHL Receiver and VHL Sharer establish trust with the Trust Anchor is beyond the scope of this profile.
 
-Note that VHLs and a SMART(R) Health Links (SHLs) are related concepts with different assumptions on the trust network.  In the VHL context a trust relationship is pre-established between the VHL Receiver and the VHL Sharer including a mutual PKI distribution mechanism. In the SHL context, there is no pre-existing trust relationship between the a SHL Receiver and SHL Sharer and the PKI material is distributed by the SHL Sharer at the time that the SHL Holder provides the SHL to the SHL Receiver.  
+Note that VHLs and a SMART(R) Health Links (SHLs) are related concepts with different assumptions on the trust network.  In the VHL context a trust relationship is pre-established between the VHL Receiver and the VHL Sharer including a mutual PKI distribution mechanism. In the SHL context, there is no pre-existing trust relationship between the a SHL Receiver and SHL Sharer and the PKI material is distributed by the SHL Sharer at the time that the SHL Holder provides the SHL to the SHL Receiver. See [Appendix A](vhl_vs_shl.html) for a more detailed comparison.
+
+
 
 <a name="actors-and-transactions"> </a>
 

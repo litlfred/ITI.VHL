@@ -1,9 +1,9 @@
-# sushi-config.yaml is documented https://fshschool.org/docs/sushi/configuration/
+# sushi-config.yaml is documented https://fshschoolA.org/docs/sushi/configuration/
 # ───────────────────────────────────────────────────
 # the id should be lowercase made up of "ihe." + {domain acronym} + "." + {profile acronym/short-name}
 id: ihe.iti.vhl
 canonical: https://profiles.ihe.net/ITI/VHL
-version: 0.0.1-current
+version: 0.0.2-current
 name: IHE_ITI_VHL
 title: "Verified Health Link"
 description: Patient Mediated sharing of their health information using internet accessible verifiable health link.
@@ -11,7 +11,7 @@ releaseLabel: ci-build
 #releaseLabel: ballot
 #releaseLabel: trial-use
 #releaseLabel: release
-#date: 2022-01-02
+date: 2025-03-07
 status: draft
 publisher:
   ## Find your domain contact on the https://www.ihe.net/ihe_domains page
@@ -70,6 +70,8 @@ pages:
   other.md:
     title: Changes to Other IHE Specifications
     generation: markdown
+  vhl_vs_shl.md:
+    title: "Appendix A: Comparision of health links"
   download.md:
     title: "Download and Analysis"
     generation: markdown
@@ -96,3 +98,4 @@ menu:
     Changes to Other IHE Specifications: other.html
     Download and Analysis: download.html
     Test Plan: testplan.html
+    Appendix A (VHL vs SHL): vhl_vs_shl.html
