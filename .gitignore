@@ -12,7 +12,7 @@
 /_gencontinuous.sh
 /_genonce.bat
 /_genonce.sh
-
+**/.index.db
 
 # Windows generated files #
 ###########################
