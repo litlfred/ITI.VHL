@@ -36,8 +36,10 @@ This section defines the actors, transactions, and/or content modules in this pr
 As a pre-condition to transactions ITI-YY3, ITI-YY4 and ITI-YY5, the VHL Receiver and VHL Sharer must exchange the appropriate PKI in order to verify their trust relationship at the time of the utlization of the VHL.  As the identities of the VHL Receiver and VHL Sharer are not directly know to each other in advance of a request to utilize a VHL, the VHL Receiver and VHL Sharer publish and retrieve key material from a third party, the Trust Anchor.    This is illustrated in Figure X.X.X.X-1
 
 
-<figure>
+<figure >
+  <div style="width:35em; max-width:100%;">
   {%include trust_interaction.svg%}
+  </div>
   <p id="fX.X.X.X-2" class="figureTitle">Figure X.X.X.X-2: Use Case Issue and Utilize VHL for a (set of) Health Document(s) Process Flow</p>
 </figure>
 
@@ -48,9 +50,11 @@ The process of a VHL Holder requesting a VHL to a set of health documents from a
 The interaction between a VHL Holder requesting a VHL to a single health document from a VHL Sharer and subsequently sharing them to a VHL Receiver is illusrated in Figure X.X.X.X-2.
 
 
-<figure>
+<figure >
+  <div style="width:18em; max-width:100%;">
   {%include vhl_interaction.svg%}
-  <p id="fX.X.X.X-2" class="figureTitle">Figure X.X.X.X-2: Use Case Issue and Utilize VHL for a (set of) Health Document(s) Process Flow</p>
+  </div>
+  <p id="fX.X.X.X-2" class="figureTitle" >Figure X.X.X.X-2: Use Case Issue and Utilize VHL for a (set of) Health Document(s) Process Flow</p>
 </figure>
 
 
@@ -83,17 +87,26 @@ The interaction between a VHL Holder requesting a VHL to a single health documen
 ### XX.1.1 Actors
 The actors in this profile are described in more detail in the sections below.
 
+<div> Actors:
 {% assign actordefinitions = site.canonicals | where: 'type' , 'ActorDefinition' %}
 {% for actordefinition in actordefinitions %}
   {% include actordefinition-short-summary.liquid actordefinition=actordefinition site=site %}
 {% endfor %}
+</div>
 
 
 
 
+<a name="TrustAnchor"> </a>
+#### XX.1.1.1 Trust Anchor
+
+The Trust Anchor receives, aggregates and distributes PKI material to the participants within a trust network, specifically the VHL Reciver and VHL Sharer.
+
+
+FHIR Capability Statement for [VHL Holder](CapabilityStatement-IHE.ToDo.TrustAnchor.html)
 
 <a name="VHLHolder"> </a>
-#### XX.1.1.2 VHL Holder
+#### XX.1.1.1 VHL Holder
 
 
 The VHL Holder is an individual that is holding an authorization mechanism, a VHL, which allows a VHL Receiver to access a (set of) health document(s) held by a VHL Sharer.
@@ -578,13 +591,17 @@ The patient provides access to their encrypted patient summary via the QR code o
 HCP has access to Patient Summary.
 
 
-<figure>
-  {%include usecase-generate-use-vhl-single-doc-processflow.svg%}
+<figure >
+  <div style="width:58em; max-width:100%;">
+    {%include usecase-generate-use-vhl-single-doc-processflow.svg%}
+  </div>
   <p id="fX.X.X.X-3" class="figureTitle">Figure X.X.X.X-3: Use Case Issue and Utilize VHL for a Single Health Document Process Flow</p>
 </figure>
 
-<figure>
-  {%include usecase-generate-use-vhl-processflow.svg%}
+<figure >
+  <div style="width:35em; max-width:100%;">
+     {%include usecase-generate-use-vhl-processflow.svg%}
+  </div>
   <p id="fX.X.X.X-2" class="figureTitle">Figure X.X.X.X-2: Use Case Issue and Utilize VHL for a (set of) Health Document(s) Process Flow</p>
 </figure>
 
@@ -605,8 +622,10 @@ This use case has the following business requirement:
 
 **Post-conditions:**
 
-<figure>
+<figure >
+  <div style="width:35em; max-width:100%;">
   {%include usecase-exchange-key-material-processflow.svg%}
+  </div>
   <p id="fX.X.X.X-1" class="figureTitle">Figure X.X.X.X-1: Use Case Issue and Utilize VHL Process Flow</p>
 </figure>
 
@@ -666,10 +685,11 @@ Some of the challenges faced during the pilot implementation, though not necessa
 - in planning for expansion to umrah and general tourism, there will not in general be a health check which presents some process challenges such as not having a encounter point to record consent prior to a visit.  
 - how to scale and automate some of the health checks  (e.g. are vaccinations sufficient) using verifiable health documents (e.g. the IPS). 
 
-<figure>
+<figure >
   <div>
-  <img src="hajj-diagram.png" caption="Figure X.X.X.X-2: Hajj Pilgrimage" style="width:100%;"/>
+  <img src="hajj-diagram.png" caption="Figure X.X.X.X-2: Hajj Pilgrimage" style="width:42em; max-width:100%;"/>
   </div>
+    <p id="fX.X.X.X-1" class="figureTitle">Figure X.X.X.X-1: Pilgrim's Journey Hajj Health Card </p>
 </figure>
 
 This use case has the following business requirement:
@@ -704,8 +724,9 @@ While there currently there is no single legal framework that broadly enables da
 
 
 
-<figure>
-  <img src="PH4H.png" caption="Figure X.X.X.X-2: Pan-American Highway for Digital Health Goals" style="width:100%;"/>
+<figure >
+  <img src="PH4H.png" caption="Figure X.X.X.X-2: Pan-American Highway for Digital Health Goals" style="width:38em; max-width: 100%;"/>
+  <p id="fX.X.X.X-1" class="figureTitle">Figure X.X.X.X-1: Pan-American Highway for Digital Health Goals </p>
 </figure>
 
 
@@ -722,10 +743,9 @@ The EVC will allow "Member States to bilaterally verify the authenticity of digi
 
 The EVC will operate in the context of the European Health Data Spaces that requires detailed information on access the health data to be recorded.
 
-<figure>
-  <div>
-  <img src="ehds_legal.png" caption="Figure X.X.X.X-2: European Health Data Spaces" style="width:100%;"/>
-  </div>
+<figure >
+  <img src="ehds_legal.png" caption="Figure X.X.X.X-2: European Health Data Spaces" style="width:45em; max-width:100%"/>
+  <p id="fX.X.X.X-1" class="figureTitle">Figure X.X.X.X-1:European Health Data Spaces </p>
 </figure>
 
 
