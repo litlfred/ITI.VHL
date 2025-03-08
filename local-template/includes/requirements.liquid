@@ -21,10 +21,6 @@
       <td>{{ ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.contact' | map: 'valueContactDetail' | map: 'telecom' | first | where: 'system', 'email' | first | map: 'value' | first }}</td>
     </tr>
     <tr>
-      <th>Description</th>
-      <td>{{ ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.description' | first | map: 'valueMarkdown' | first| markdownify }}</td>
-    </tr>
-    <tr>
       <th>Jurisdiction</th>
       <td>{{ ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.jurisdiction' | first | map: 'valueCodeableConcept' | map: 'coding' | first | first | map: 'code' | first }}</td>
     </tr>

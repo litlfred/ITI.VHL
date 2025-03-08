@@ -2,7 +2,8 @@
 {% assign ext = actordefinition.extension %}
 
 {% assign title = ext | where: "url", "http://hl7.org/fhir/5.0/StructureDefinition/extension-ActorDefinition.title" | first %}
-
+{% assign capes = ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-ActorDefinition.capabilities' %}
+    
 
 <table border="1" style="border-collapse: collapse;">
   <tbody>
@@ -21,20 +22,15 @@
       <td>{{ ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-ActorDefinition.contact' | map: 'valueContactDetail' | map: 'telecom' | first | where: 'system', 'email' | first | map: 'value' | first }}</td>
     </tr>
     <tr>
-      <th>Description</th>
-      <td>{{ ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-ActorDefinition.description' | first | map: 'valueMarkdown' | first | markdownify }}</td>
-    </tr>
-    <tr>
       <th>Jurisdiction</th>
       <td>{{ ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-ActorDefinition.jurisdiction' | first | map: 'valueCodeableConcept' | map: 'coding' | first | first | map: 'code' | first }}</td>
     </tr>
+    {% unless capes == empty %}    
     <tr>
-      <th>Capabilities</th>
+      <th>Capability Statements</th>
       <td>
-	This actor fufills the following requirement(s):
-        <ul>
-	  
-          {% assign capes = ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-ActorDefinition.capabilities' %}	      {{ capse | json }}
+	This actor fufills the following capabilities:
+        <ul>	  
           {% for cape in capes %}
               {% assign capeinstance = cape.valueCanonical | split: "/" | last  | split: ".html" | first %}
 	      {% assign capepage = "CapabilityStatement-" | append: capeinstance | append: ".html" %}
@@ -43,6 +39,35 @@
 	      
           {% endfor %}
         </ul>
+      </td>
+    </tr>
+    {% endunless %}
+    <tr>
+      <th>Requirements</th>
+      <td>
+	This actor fufulls the following requirements:
+	<ul>
+	  {% assign actorstub = "ActorDefinition-" | append: actordefinition.id %}
+	  {% assign canonicals = site.data.canonicals | where: 'type' , 'Requirements' %}
+	  {% for canonical in canonicals %}
+	    {% assign stub = canonical.type | append: "-" | append: canonical.id %}
+	    {% assign req = site.data[stub] %}
+   	    <pre>Scanning: {{ stub }}</pre>
+
+	     {% assign reqactors =  req.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.actor'  %}
+	     {% for reqactor in reqactors %}
+	     {% assign reqactorcanonical = reqactor.valueCanonical | split: "/" | last   %}
+    	     {% assign reqactorstub = "ActorDefinition-" | append: reqactorcanonical %}
+              {% unless reqactorstub != actorstub %}
+	        Found: <pre>{{ req }} </pre>
+  	        <li>
+  	          {% include requirements-short-summary.liquid requirement='req' Site=site %}
+	        <li>
+	      {% endunless %}
+            {% endfor %}
+	  {% endfor %}
+
+	</ul>
       </td>
     </tr>
   </tbody>
