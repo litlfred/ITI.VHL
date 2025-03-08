@@ -4,7 +4,7 @@
 top to bottom direction
 skinparam nodesep 75
 
-title VHL Trust Actor Diagram
+title VHL Utilization Actor Diagram
 
 agent "Holder" as H
 agent "VHL Sharer" as VHLS
