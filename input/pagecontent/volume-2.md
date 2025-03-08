@@ -16,18 +16,20 @@ None defined. Up to a content profile to define.
 #### Request Actions 
 The [Sharer](ActorDefinition-VHLSharer.html) will generate a VHL.
 
+
 See requirement(s):
 <ul>
   <li>
-    {% assign requirement = site.data.Requirements-IssueVHL %}
+  	{% assign requirement = site.data.Requirements-GenerateVHL %}
     {% include requirements-short-summary.liquid requirement=requirement %}
-  <li>
+	
+
+  </li>
 </ul>
   
 
 
 
-> Note: I would rather include the narrative of the requirement here
 
 #### Response Trigger
 [Sharer](ActorDefinition-VHLSharer.Html) has performed any necceasry document generation, digital signatures and has generated a VHL according to a content profile.

@@ -266,7 +266,7 @@ InstanceOf: Requirements
 Usage: #definition
 * name = "GenerateVHL"
 * experimental = true
-* title = "Issue VHL"
+* title = "Generate VHL"
 * status = $pubStatus#active
 * publisher = "IHE"
 * description = "Generate a VHL to issue to a Holder.
