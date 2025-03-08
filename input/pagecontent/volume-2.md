@@ -22,16 +22,14 @@ Optional precondition: the [Holder](ActorDefinition-VHLHolder.html) has selected
 ##### 2:XX.4.1.2 Message Semantics
 None defined. Up to a content profile to define.
 ##### 2:XX.4.1.3 Expected Actions
-The [Sharer](ActorDefinition-VHLSharer.html) will generate a VHL.
+The [Sharer](ActorDefinition-VHLSharer.html) actor will generate a VHL.
 
 
-The actor shall follow the following requirement(s):
+The [Sharer](ActorDefinition-VHLSharer.html) actor shall follow the following requirement(s):
 <ul>
   <li>
   	{% assign requirement = site.data.Requirements-GenerateVHL %}
-    {% include requirements-short-summary.liquid requirement=requirement %}
-	
-
+    {% include requirements-short-summary.liquid requirement=requirement %}	
   </li>
 </ul>
 

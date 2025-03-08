@@ -37,11 +37,12 @@
 	  {% assign statements = ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement' %}
           {% for statement in statements %}
 	  <li>
+            {% assign stmtconformance = statement.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.conformance' | map: 'valueCode' | first  %}
 	    {% assign stmtkey = statement.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.key' | map: 'valueId' | first  %}
 	    {% assign stmtlabel = statement.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.label' | map: 'valueString' | first  %}	    
 	    {% assign stmtrequirement = statement.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.requirement' | map: 'valueMarkdown' | first  %}	    
 
-	    <b>{{ stmtlabel }} ( {{stmtkey}} )</b>: {{ stmtrequirement }}
+	    <b>{{stmtconformance}} -{{ stmtlabel }} ( {{stmtkey}} )</b>: {{ stmtrequirement }}
 	  </li>
 	  {% endfor %}
         </ol>	 

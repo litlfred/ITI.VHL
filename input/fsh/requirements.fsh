@@ -274,13 +274,17 @@ This transactions is used by a VHL Holder to request that a VHL Sharer generate 
 
 
 "
+// * useContext[+].code = $interactions#transaction
 * actor[+] = Canonical(VHLSharer)
 * statement[+].key = "collect-content"
-* statement[=].label = "collect content"
+* statement[=].label = "Collect content"
 * statement[=].requirement = "Collect any pre-existing content and/or generate any necessary content that will be referenced as part of the VHL."
+* statement[=].conformance = #SHALL
 * statement[+].key = "generate-vhl-payload"
 * statement[=].label = "Generate VHL Payload"
 * statement[=].requirement = "Generate the payload for the VHL."
+* statement[=].conformance = #SHALL
 * statement[+].key = "sign-VHL"
 * statement[=].label = "Sign VHL"
 * statement[=].requirement = "Sign the VHL payload  to produce a Verifiable Health Link."
+* statement[=].conformance = #SHALL
