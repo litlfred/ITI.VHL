@@ -19,5 +19,5 @@ Steps in the requirement:
    {% assign stmtlabel = statement.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.label' | map: 'valueString' | first  %}	    
    {% assign stmtrequirement = statement.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.requirement' | map: 'valueMarkdown' | first  | markdownify %}	    
     <li><b>{{stmtconformance}} - {{ stmtlabel }}</b>: {{ stmtrequirement }}</li>
-  {% endfor %}
+    {% endfor %}
 </ol>

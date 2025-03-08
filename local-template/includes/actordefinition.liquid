@@ -31,13 +31,15 @@
     <tr>
       <th>Capabilities</th>
       <td>
+	This actor fufills the following requirement(s):
         <ul>
-          {% assign capabilities = ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-ActorDefinition.capabilities" ' %}	    
-          {% for capability in capabilities %}
-              {% assign capabilityinstance = actor.valueCanonical | split: "/" | last  | split: ".html" | first %}
-	      {% assign capabilitypage = "CapabilityStatement-" | append: actorinstance | append: ".html" %}
-	      {% assign capabilityname = site.data.pages[actorpage].title %}
-              <li><a href="{{capabilitypage}}">{{ capabilityname| escape_once  }}</a></li>
+	  
+          {% assign capes = ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-ActorDefinition.capabilities' %}	      {{ capse | json }}
+          {% for cape in capes %}
+              {% assign capeinstance = cape.valueCanonical | split: "/" | last  | split: ".html" | first %}
+	      {% assign capepage = "CapabilityStatement-" | append: capeinstance | append: ".html" %}
+	      {% assign capename = site.data.pages[capepage].title %}
+              <li><a href="{{capepage}}">{{ capename| escape_once  }}</a></li>
 	      
           {% endfor %}
         </ul>
