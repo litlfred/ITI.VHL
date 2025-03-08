@@ -83,7 +83,7 @@ The interaction between a VHL Holder requesting a VHL to a single health documen
 ### XX.1.1 Actors
 The actors in this profile are described in more detail in the sections below.
 
-{% assign actordefinitions = site.canonicals | where 'type' , 'ActorDefinition' %}
+{% assign actordefinitions = site.canonicals | where: 'type' , 'ActorDefinition' %}
 {% for actordefinition in actordefinitions %}
   {% include actordefinition-short-summary.liquid actordefinition=actordefinition site=site %}
 {% endfor %}
