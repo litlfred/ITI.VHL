@@ -166,7 +166,6 @@ Usage: #definition
 * description = "This transactions is initiated by a VHL Receiver to request a set of health documents from a VHL Sharer.  This transaction should be conducted in such a manner that the VHL Receiver and VHL Sharer can validate one another's participation in the same trust network. The VHL Sharer shall optionally be able to record an audit event for the access of the folder by the VHL Receiver upon the transaction request under the Audit Event option.
 
 
-For more details see the detailed [transaction description](ITI-YY4.html)
 "
 * actor[+] = Canonical(VHLReceiver)
 
@@ -177,7 +176,7 @@ Usage: #definition
 * title = "Request VHL Document"
 * status = $pubStatus#active
 * publisher = "IHE"
-* description = "This  transaction is initiated by a VHL Receiver to request a single health document from a VHL Sharer.  This transaction should be conducted in such a manner that the VHL Receiver and VHL Sharer can validate their respective participation in the same trust network.  The VHL Receiver shall optionally be able to validate that the veracity of the health document received through this transaction under the Verify Document Signature option.  The VHL Sharer shall optionally be able to record an audit event for the access of the folder by the VHL Receiver upon the transaction request under the Audit Event option. For more details see the detailed [transaction description](ITI-YY4.html)"
+* description = "This  transaction is initiated by a VHL Receiver to request a single health document from a VHL Sharer.  This transaction should be conducted in such a manner that the VHL Receiver and VHL Sharer can validate their respective participation in the same trust network.  The VHL Receiver shall optionally be able to validate that the veracity of the health document received through this transaction under the Verify Document Signature option.  The VHL Sharer shall optionally be able to record an audit event for the access of the folder by the VHL Receiver upon the transaction request under the Audit Event option. "
 * actor[+] = Canonical(VHLReceiver)
 
 
@@ -188,7 +187,7 @@ Usage: #definition
 * title = "Provide VHL"
 * status = $pubStatus#active
 * publisher = "IHE"
-* description = "This transacation is initiated by a VHL Holder to transmit a VHL to the VHL Receiver.   Depending on the use case and context, the payload comprising the VHL may be rendered/serialized and transmitted through various mechanisms, for example as a QR-code, Verifiable Credentials, bluetooth or near-field communication protocols.  These mechanisms are described in [Volume 3](volume-3.html). For more details see the detailed [transaction description](ITI-YY4.html)" 
+* description = "This transacation is initiated by a VHL Holder to transmit a VHL to the VHL Receiver.   Depending on the use case and context, the payload comprising the VHL may be rendered/serialized and transmitted through various mechanisms, for example as a QR-code, Verifiable Credentials, bluetooth or near-field communication protocols.  These mechanisms are described in [Volume 3](volume-3.html). " 
 * actor[+] = Canonical(VHLHolder)
 
 
@@ -273,7 +272,7 @@ Usage: #definition
 
 This transactions is used by a VHL Holder to request that a VHL Sharer generate a VHL.  A VHL Sharer may optionally record the consent of the individual to share their information under the Record Consent option. A VHL Sharer may optionally create an audit trail of the creation of the VHL under the Audit Event option. The individual shall trust that VHL Sharer has been authorized by its jurisidiction to authorize and provide access to health documents.   
 
-For more details see the detailed [transaction description](volume-2.html#GenerateVHL)
+
 "
 * actor[+] = Canonical(VHLSharer)
 * statement[+].key = "collect-content"
