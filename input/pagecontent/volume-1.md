@@ -103,7 +103,7 @@ The actors in this profile are described in more detail in the sections below.
 The Trust Anchor receives, aggregates and distributes PKI material to the participants within a trust network, specifically the VHL Reciver and VHL Sharer.
 
 
-FHIR Capability Statement for [VHL Holder](CapabilityStatement-IHE.ToDo.TrustAnchor.html)
+FHIR Capability Statement for the [Trust Anchor](CapabilityStatement-IHE.VHL.TrustAnchor.html) actor.
 
 <a name="VHLHolder"> </a>
 #### XX.1.1.1 VHL Holder
