@@ -24,7 +24,7 @@
     </tr>
     <tr>
       <th>Description</th>
-      <td>{{ ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.description' | first | map: 'valueMarkdown' | first }}</td>
+      <td>{{ ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.description' | first | map: 'valueMarkdown' | first| markdownify }}</td>
     </tr>
     <tr>
       <th>Jurisdiction</th>
