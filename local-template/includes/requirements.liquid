@@ -19,10 +19,6 @@
       </td>
     </tr>
     <tr>
-      <th>Contact URL</th>
-      <td>/td>
-    </tr>
-    <tr>
       <th>Contact Email</th>
       <td>{{ ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.contact' | map: 'valueContactDetail' | map: 'telecom' | first | where: 'system', 'email' | first | map: 'value' | first }}</td>
     </tr>

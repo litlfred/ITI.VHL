@@ -3,8 +3,8 @@
 
 ### 2:X.1.1 Issue VHL
 
-A [[Holder](ActorDefinition-VHLHolder.Html)](ActorDefinition-VHL[Holder](ActorDefinition-VHLHolder.Html).html) requests  [Sharer](ActorDefinition-VHLSharer.html) to generate a VHL.
-
+A [Holder](ActorDefinition-VHLHolder.html) requests a  [Sharer](ActorDefinition-VHLSharer.html) to generate a VHL.
+r
  
  
 #### Request Trigger
@@ -17,13 +17,12 @@ None defined. Up to a content profile to define.
 The [Sharer](ActorDefinition-VHLSharer.html) will generate a VHL.
 
 See requirement(s):
-* [Issue VHL](Requirements-IssueVHL.html)
-
-<div>
-{% assign reqs = site.data.Requirements-IssueVHL %}
-  {% include requirements2.liquid reqs=reqs %}
-
-</div>
+<ul>
+  <li>
+    {% assign requirement = site.data.Requirements-IssueVHL %}
+    {% include requirements-short-summary.liquid requirement=requirement %}
+  <li>
+</ul>
   
 
 
