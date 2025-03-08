@@ -20,8 +20,6 @@ The actor has the following capabilities:
   <li>
     {% assign capeinstance = capabilitystatement.valueCanonical | split: "/" | last  | split: ".html" | first %}
     {% assign capestub = "CapabilityStatement-" | append: capeinstance  %}
-    {% assign capepage = capestub | append: ".html" %}
-
     {% include capabilitystatement-short-summary.liquid capabilitystamenet=site.data[capestub] site=site %}
   </li>
   {% endfor %}
