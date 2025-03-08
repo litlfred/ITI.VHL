@@ -1,5 +1,5 @@
 
-{% assign ext = requirement.extension %}
+{% assign ext = actordefinition.extension %}
 
 {% assign title = ext | where: "url", "http://hl7.org/fhir/5.0/StructureDefinition/extension-ActorDefinition.title" | first %}
 
@@ -13,50 +13,33 @@
     <tr>
       <th>Publisher</th>
       <td>
-	{% assign contacturl =  ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.contact' | map: 'valueContactDetail' | map: 'telecom' | first | where: 'system', 'url' | first | map: 'value' | first %}
-	{% assign publisher = ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.publisher' | first | map: 'valueString' | first %}
+	{% assign contacturl =  ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-ActorDefinition.contact' | map: 'valueContactDetail' | map: 'telecom' | first | where: 'system', 'url' | first | map: 'value' | first %}
+	{% assign publisher = ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-ActorDefinition.publisher' | first | map: 'valueString' | first %}
 	<a href="{{contacturl}}">{{publisher}}</a>
       </td>
     </tr>
     <tr>
       <th>Contact Email</th>
-      <td>{{ ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.contact' | map: 'valueContactDetail' | map: 'telecom' | first | where: 'system', 'email' | first | map: 'value' | first }}</td>
+      <td>{{ ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-ActorDefinition.contact' | map: 'valueContactDetail' | map: 'telecom' | first | where: 'system', 'email' | first | map: 'value' | first }}</td>
     </tr>
     <tr>
       <th>Description</th>
-      <td>{{ ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.description' | first | map: 'valueMarkdown' | first | markdownify }}</td>
+      <td>{{ ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-ActorDefinition.description' | first | map: 'valueMarkdown' | first | markdownify }}</td>
     </tr>
     <tr>
       <th>Jurisdiction</th>
-      <td>{{ ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.jurisdiction' | first | map: 'valueCodeableConcept' | map: 'coding' | first | first | map: 'code' | first }}</td>
+      <td>{{ ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-ActorDefinition.jurisdiction' | first | map: 'valueCodeableConcept' | map: 'coding' | first | first | map: 'code' | first }}</td>
     </tr>
     <tr>
-      <th>Steps</th>
-      <td>
-  	<ol>
-	  {% assign statements = ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement' %}
-          {% for statement in statements %}
-	  <li>
-	    {% assign stmtkey = statement.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.key' | map: 'valueId' | first  %}
-	    {% assign stmtlabel = statement.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.label' | map: 'valueString' | first  %}	    
-	    {% assign stmtrequirement = statement.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.requirement' | map: 'valueMarkdown' | first | markdownify  %}	    
-
-	    <b>{{ stmtlabel }} ( {{stmtkey}} )</b>: {{ stmtrequirement }}
-	  </li>
-	  {% endfor %}
-        </ol>	 
-      </td>
-    <tr>
-    <tr>
-      <th>Participanting Actors</th>
+      <th>Capabilities</th>
       <td>
         <ul>
-          {% assign actors = ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.actor' %}
-          {% for actor in actors %}
-              {% assign actorinstance = actor.valueCanonical | split: "/" | last  | split: ".html" | first %}
-	      {% assign actorpage = "ActorDefinition-" | append: actorinstance | append: ".html" %}
-	      {% assign actorname = site.data.pages[actorpage].title %}
-              <li><a href="{{actorpage}}">{{ actorname| escape_once  }}</a></li>
+          {% assign capabilities = ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-ActorDefinition.capabilities" ' %}	    
+          {% for capability in capabilities %}
+              {% assign capabilityinstance = actor.valueCanonical | split: "/" | last  | split: ".html" | first %}
+	      {% assign capabilitypage = "CapabilityStatement-" | append: actorinstance | append: ".html" %}
+	      {% assign capabilityname = site.data.pages[actorpage].title %}
+              <li><a href="{{capabilitypage}}">{{ capabilityname| escape_once  }}</a></li>
 	      
           {% endfor %}
         </ul>

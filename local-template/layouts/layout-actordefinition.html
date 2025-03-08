@@ -39,9 +39,9 @@
 
 
 {% if '{{[type]}}' == 'ActorDefinition' %}
-  {% assign filename = page.path | split: ".html" | first %} 
-  {% assign actor = site.data[filename] %} 
-  {% include actordefinition.liquid actor=actor site=site %}
+  {% assign filestub = page.path | split: ".html" | first %} 
+  {% assign actordefinition = site.data[filestub] %} 
+  {% include actordefinition.liquid actordefinition=actordefinition site=site %}
 
 {% endif %}
 

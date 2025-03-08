@@ -39,8 +39,8 @@
 
 
 {% if '{{[type]}}' == 'Requirements' %}
-  {% assign filename = page.path | split: ".html" | first %} 
-  {% assign requirement = site.data[filename] %} 
+  {% assign filestub = page.path | split: ".html" | first %} 
+  {% assign requirement = site.data[filestub] %} 
   {% include requirements.liquid requirement=requirement site=site %}
 
 {% endif %}
