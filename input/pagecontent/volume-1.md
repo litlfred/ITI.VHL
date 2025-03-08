@@ -83,12 +83,13 @@ The interaction between a VHL Holder requesting a VHL to a single health documen
 ### XX.1.1 Actors
 The actors in this profile are described in more detail in the sections below.
 
-<a name="TrustAnchor"> </a>
-#### XX.1.1.1 Trust Anchor
+{% assign actordefinitions = site.canonicals | where 'type' , 'ActorDefinition' %}
+{% for actordefinition in actordefinitions %}
+  {% include actordefinition-short-summary.liquid actordefinition=actordefinition site=site %}
+{% endfor %}
 
-The Trust Anchor receives, aggregates and distributes PKI material to the participants within a trust network, specifically the VHL Reciver and VHL Sharer.
 
-FHIR Capability Statement for [Trust Anchor](CapabilityStatement-IHE.TrustAnchor.html)
+
 
 
 <a name="VHLHolder"> </a>

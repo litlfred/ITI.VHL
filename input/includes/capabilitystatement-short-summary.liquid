@@ -1,0 +1,13 @@
+
+
+
+{% assign title = capabilitystatement.extension | where: "url", "http://hl7.org/fhir/5.0/StructureDefinition/extension-CapabilityStatement.title" | first %}
+
+{% assign description = capabilitystatement.extension | where: "url", "http://hl7.org/fhir/5.0/StructureDefinition/extension-Capabilitystatement.description" | first %}
+
+
+{% assign name = capabilitystatement.extension | where: "url", "http://hl7.org/fhir/5.0/StructureDefinition/extension-Capabilitystatement.name" | first %}
+
+<b><a href="Capabilitystatement-{{capabilitystatement.id}}.html">{{title.valueString}} </a></b>:{{description.valueMarkdown}}
+
+

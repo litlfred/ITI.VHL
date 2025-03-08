@@ -1,0 +1,31 @@
+
+
+
+{% assign title = actordefinition.extension | where: "url", "http://hl7.org/fhir/5.0/StructureDefinition/extension-Actordefinitions.title" | first %}
+
+{% assign description = actordefinition.extension | where: "url", "http://hl7.org/fhir/5.0/StructureDefinition/extension-Actordefinitions.description" | first %}
+
+
+
+<h4>{{title}}</h4>
+
+{{description}}
+
+
+
+{% assign capabilitystatements = site.canonicals | where 'type' , 'CapabilityStatement' %}
+The actor has the following capabilities:
+<ul>	  
+  {% for capabilitystatement in actordefinition.capabilities %}
+  <li>
+    {% assign capeinstance = capabilitystatement.valueCanonical | split: "/" | last  | split: ".html" | first %}
+    {% assign capestub = "CapabilityStatement-" | append: capeinstance  %}
+    {% assign capepage = capestub | append: ".html" %}
+
+    {% include capabilitystatement-short-summary.liquid capabilitystamenet=site.data[capestub] site=site %}
+  </li>
+  {% endfor %}
+</ul>
+
+
+
