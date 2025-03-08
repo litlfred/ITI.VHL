@@ -21,7 +21,7 @@ See requirement(s):
 <ul>
   <li>
   	{% assign requirement = site.data.Requirements-GenerateVHL %}
-    {% include requirements-short-summary.liquid requirement=site.data.Requirements-GenerateVHL %}
+    {% include requirements-short-summary.liquid requirement=requirement %}
 	
 
   </li>
