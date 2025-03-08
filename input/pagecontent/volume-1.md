@@ -64,9 +64,8 @@ The interaction between a VHL Holder requesting a VHL to a single health documen
 
 <p id ="tXX.1-1" class="tableTitle">Table XX.1-1: Profile Acronym Profile - Actors and Transactions</p>
 
-|              |                              |                        |            |                           |
-|--------------|------------------------------|------------------------|------------|---------------------------|
 | Actors       | Transactions                 | Initiator or Responder | Optionality| Reference                 |
+|--------------|------------------------------|------------------------|------------|---------------------------|
 | Trust Anchor | Publish PKI Material         | Responder              | R          | ITI TF-2: YY1 |
 |              | Retrieve PKI Material        | Responder              | R          | ITI TF-2: YY2 |
 | VHL Holder   | Generate VHL                 | Initiator              | R          | ITI TF-2: YY3 |
@@ -206,9 +205,8 @@ Options that may be selected for each actor in this implementation guide, are li
 
 <p id ="tXX.1-1" class="tableTitle">Table XX.2-1: Actor Options</p>
 
-|              |                           |
-|--------------|---------------------------|
 | Actor        | Option Name               |
+|--------------|---------------------------|
 | VHL Receiver | Verify Document Signature |
 | VHL Sharer   | Record Consent            |
 |              | Audit Event               |
