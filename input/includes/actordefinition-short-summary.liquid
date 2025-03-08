@@ -1,29 +1,28 @@
 
+{% assign ext  = actordefinition.extension %}
+{% assign title = ext | where: "url", "http://hl7.org/fhir/5.0/StructureDefinition/extension-ActorDefinition.title" | first %}
+{% assign descr = ext | where: "url", "http://hl7.org/fhir/5.0/StructureDefinition/extension-ActorDefinition.description" | first %}
+{% assign capes = ext | where: "url", "http://hl7.org/fhir/5.0/StructureDefinition/extension-ActorDefinition.capabilities" %}
 
 
-{% assign title = actordefinition.extension | where: "url", "http://hl7.org/fhir/5.0/StructureDefinition/extension-Actordefinitions.title" | first %}
+<h4>XX.1.1.X {{title.valueString}}</h4>
 
-{% assign description = actordefinition.extension | where: "url", "http://hl7.org/fhir/5.0/StructureDefinition/extension-Actordefinitions.description" | first %}
+{{descr.valueMarkdown | markdownify}}
 
-
-
-<h4>{{title}}</h4>
-
-{{description}}
-
-
-
-{% assign capabilitystatements = site.canonicals | where 'type' , 'CapabilityStatement' %}
-The actor has the following capabilities:
+{% unless capes == empty %}
+This actor fufills the following capabilities:
 <ul>	  
-  {% for capabilitystatement in actordefinition.capabilities %}
+  {% for cape in capes %}
   <li>
-    {% assign capeinstance = capabilitystatement.valueCanonical | split: "/" | last  | split: ".html" | first %}
+    {% assign capeinstance = cape.valueCanonical | split: "/" | last  | split: ".html" | first | replace: "." , "" %}
     {% assign capestub = "CapabilityStatement-" | append: capeinstance  %}
-    {% include capabilitystatement-short-summary.liquid capabilitystamenet=site.data[capestub] site=site %}
+
+    {% assign cs = site.data[capestub] %}
+    {% include capabilitystatement-short-summary.liquid cs=cs site=site %}
   </li>
   {% endfor %}
 </ul>
+{% endunless %}
 
 
 

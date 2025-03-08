@@ -86,49 +86,14 @@ The interaction between a VHL Holder requesting a VHL to a single health documen
 ### XX.1.1 Actors
 The actors in this profile are described in more detail in the sections below.
 
-<div> Actors:
-{% assign actordefinitions = site.canonicals | where: 'type' , 'ActorDefinition' %}
-{% for actordefinition in actordefinitions %}
-  {% include actordefinition-short-summary.liquid actordefinition=actordefinition site=site %}
+
+{% assign canonicals = site.data.canonicals | where: 'type' , 'ActorDefinition' %}
+{% for canonical in canonicals %}
+   {% assign stub = canonical.type | append: "-" | append: canonical.id %}
+   {% assign actordefinition = site.data[stub] %}
+   {% include actordefinition-short-summary.liquid actordefinition=actordefinition site=site %}
 {% endfor %}
-</div>
 
-
-
-
-<a name="TrustAnchor"> </a>
-#### XX.1.1.1 Trust Anchor
-
-The Trust Anchor receives, aggregates and distributes PKI material to the participants within a trust network, specifically the VHL Reciver and VHL Sharer.
-
-
-FHIR Capability Statement for the [Trust Anchor](CapabilityStatement-IHE.VHL.TrustAnchor.html) actor.
-
-<a name="VHLHolder"> </a>
-#### XX.1.1.1 VHL Holder
-
-
-The VHL Holder is an individual that is holding an authorization mechanism, a VHL, which allows a VHL Receiver to access a (set of) health document(s) held by a VHL Sharer.
-
-FHIR Capability Statement for [VHL Holder](CapabilityStatement-IHE.ToDo.vhl-holder.html)
-
-
-<a name="VHLReceiver"> </a>
-#### XX.1.1.2 VHL Receiver
-
-
-The VHL Receiver receives a VHL from a VHL Holder which it utilizes to request access to health documents from a VHL Sharer.
-
-FHIR Capability Statement for [VHL Receiver](CapabilityStatement-IHE.ToDo.vhl-receiver.html)
-
-
-<a name="VHLSharer"> </a>
-#### XX.1.1.2 VHL Sharer
-
-
-The VHL Sharer generates a VHL, provides the VHL to a VHL Holder, and responds to requests from a VHL Sharer to utilize the VHL.
-
-FHIR Capability Statement for [VHL Sharer](CapabilityStatement-IHE.ToDo.vhl-sharer.html)
 
 ### XX.1.2 Transaction Descriptions
 
