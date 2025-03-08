@@ -8,6 +8,11 @@ agent "Trust Anchor" as TA
 agent "VHL Sharer" as VHLS
 agent "VHL Receiver" as VHLR
 
+url of TA is [[ActorDefinition-TrustAnchor.html]]
+url of VHLR is [[ActorDefinition-VHLReceiver.html]]
+url of VHLS is [[ActorDefinition-VHLSharer.html]]
+
+
 TA -- VHLS  : -"Publish PKI Material\nRetrieve PKI Material"
 TA -- VHLR : "Publish PKI Material\nRetrieve PKI Material"
 @enduml

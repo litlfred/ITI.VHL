@@ -20,14 +20,14 @@ Note that VHLs and a SMART(R) Health Links (SHLs) are related concepts with diff
 This section defines the actors, transactions, and/or content modules in this profile. Further information about actor and transaction definitions can be found in the IHE Technical Frameworks General Introduction [Appendix A: Actors](https://profiles.ihe.net/GeneralIntro/ch-A.html) and [Appendix B: Transactions](https://profiles.ihe.net/GeneralIntro/ch-B.html).
 
 * Actors
-  * [Trust Anchor](#TrustAnchor)
-  * [VHL Holder](#VHLHolder)
-  * [VHL Receiver](#VHLReceiver)
-  * [VHL Sharer](#VHLSharer)
+  * [Trust Anchor](ActorDefinition-TrustAnchor.html)
+  * [VHL Holder](ActorDefinition-VHLHolder.html)
+  * [VHL Receiver](ActorDefinition-VHLReceiver.html)
+  * [VHL Sharer](ActorDefinition-VHLSharer.html)
 * Transactions
   * [Publish PKI Material: todo](ITI-YY1.html)
   * [Retrieve PKI Material: todo](ITI-YY2.html)
-  * [Generate VHL](generate_vhl.html)
+  * [Generate VHL](volume-2.html#GenerateVHL)
   * [Request VHL Documents: todo](ITI-YY4.html)
   * [Request VHL Document: todo](ITI-YY5.html)
   * [Provide VHL: todo](ITI-YY6.html)
