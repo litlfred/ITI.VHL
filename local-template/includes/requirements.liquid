@@ -12,11 +12,15 @@
 
     <tr>
       <th>Publisher</th>
-      <td>{{ ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.publisher' | first | map: 'valueString' | first }}</td>
+      <td>
+	{% assign contacturl =  ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.contact' | map: 'valueContactDetail' | map: 'telecom' | first | where: 'system', 'url' | first | map: 'value' | first %}
+	{% assign publisher = ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.publisher' | first | map: 'valueString' | first %}
+	<a href="{{contacturl}}">{{publisher}}</a>
+      </td>
     </tr>
     <tr>
       <th>Contact URL</th>
-      <td>{{ ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.contact' | map: 'valueContactDetail' | map: 'telecom' | first | where: 'system', 'url' | first | map: 'value' | first }}</td>
+      <td>/td>
     </tr>
     <tr>
       <th>Contact Email</th>
@@ -33,31 +37,24 @@
     <tr>
       <th>Steps</th>
       <td>
-        {% assign statements = ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement' %}
-  	<ul>
+  	<ol>
+	  {% assign statements = ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement' %}
           {% for statement in statements %}
-	  <li>Step 
+	  <li>
 	    {% assign stmtkey = statement.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.key' | map: 'valueId' | first  %}
 	    {% assign stmtlabel = statement.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.label' | map: 'valueString' | first  %}	    
 	    {% assign stmtrequirement = statement.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.requirement' | map: 'valueMarkdown' | first  %}	    
 
 	    <b>{{ stmtlabel }} ( {{stmtkey}} )</b>: {{ stmtrequirement }}
-
-	  <li>
-
 	  </li>
 	  {% endfor %}
-        </ul>	 
+        </ol>	 
       </td>
     <tr>
     <tr>
       <th>Participanting Actors</th>
       <td>
         <ul>
-
-
-
-
           {% assign actors = ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.actor' %}
           {% for actor in actors %}
               {% assign actorinstance = actor.valueCanonical | split: "/" | last  | split: ".html" | first %}

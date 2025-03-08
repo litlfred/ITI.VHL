@@ -273,7 +273,7 @@ Usage: #definition
 
 This transactions is used by a VHL Holder to request that a VHL Sharer generate a VHL.  A VHL Sharer may optionally record the consent of the individual to share their information under the Record Consent option. A VHL Sharer may optionally create an audit trail of the creation of the VHL under the Audit Event option. The individual shall trust that VHL Sharer has been authorized by its jurisidiction to authorize and provide access to health documents.   
 
-For more details see the detailed [transaction description](generate_vhl.html)
+For more details see the detailed [transaction description](volume-2.html#GenerateVHL)
 "
 * actor[+] = Canonical(VHLSharer)
 * statement[+].key = "collect-content"
