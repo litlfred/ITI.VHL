@@ -176,7 +176,7 @@ This transactions is initiated by a {{ linkvhlr }} to request a single health do
 For more details see the detailed [transaction description](ITI-YY4.html)
 
 This transaction is captured as the following requirement:
-* [Request VHL Document](Requirements-RequestVHLDocument.html)
+* [Request VHL Document](Requirements-RequestVHLDocuments.html)
 
 #### XX.1.2.6 Provide VHL
 
@@ -187,7 +187,7 @@ For more details see the detailed [transaction description](ITI-YY4.html)
 
 
 This transaction is captured as the following requirement:
-* [Provide VHL](Requirements-Provide VHL.html)
+* [Provide VHL](Requirements-ProvideVHL.html)
 
 <a name="actor-options"> </a>
 
