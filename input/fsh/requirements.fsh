@@ -256,7 +256,7 @@ Usage: #definition
 * status = $pubStatus#active
 * publisher = "IHE"
 * description = "Is able to receive a VHL authorization mechanism from a VHL Holder"
-* actor[+] = Canonical(VHLSharer)
+* actor[+] = Canonical(VHLReceiver)
 
 
 

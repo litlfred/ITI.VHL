@@ -29,7 +29,7 @@ The [Sharer](ActorDefinition-VHLSharer.html) actor shall follow the following re
 <ul>
   <li>
   	{% assign requirement = site.data.Requirements-GenerateVHL %}
-    {% include requirements-short-summary.liquid requirement=requirement %}	
+    {% include requirements-short-summary.liquid requirement=requirement site=site %}	
   </li>
 </ul>
 

@@ -13,7 +13,7 @@
       <td>
 	{% assign contacturl =  ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.contact' | map: 'valueContactDetail' | map: 'telecom' | first | where: 'system', 'url' | first | map: 'value' | first %}
 	{% assign publisher = ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.publisher' | first | map: 'valueString' | first %}
-	<a href="{{contacturl}}">{{publisher}}</a>
+	<a href="{{  contacturl  }}">{{  publisher  }}</a>
       </td>
     </tr>
     <tr>
@@ -36,7 +36,16 @@
 	    {% assign stmtlabel = statement.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.label' | map: 'valueString' | first  %}	    
 	    {% assign stmtrequirement = statement.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.requirement' | map: 'valueMarkdown' | first  %}	    
 
-	    <b>{{stmtconformance}} -{{ stmtlabel }} ( {{stmtkey}} )</b>: {{ stmtrequirement }}
+	    <b>
+	      {% unless stmtconformance == empty %}  
+	      <a href="https://hl7.org/fhir/R5//codesystem-conformance-expectation.html#content">
+		{{ stmtconformance  }}
+	      </a>
+	      -
+	      {% endunless %}
+	      {{ stmtlabel }} ( {{  stmtkey  }} )
+	    </b>
+	    : {{ stmtrequirement }}
 	  </li>
 	  {% endfor %}
         </ol>	 
@@ -51,7 +60,7 @@
               {% assign actorinstance = actor.valueCanonical | split: "/" | last  | split: ".html" | first %}
 	      {% assign actorpage = "ActorDefinition-" | append: actorinstance | append: ".html" %}
 	      {% assign actorname = site.data.pages[actorpage].title %}
-              <li><a href="{{actorpage}}">{{ actorname| escape_once  }}</a></li>
+              <li><a href="{{  actorpage  }}">{{ actorname | escape_once  }}</a></li>
 	      
           {% endfor %}
         </ul>

@@ -1,6 +1,6 @@
 
 
-<pre>{{ requirement }}</pre>
+
 {% assign title = requirement.extension | where: "url", "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.title" | first %}
 
 {% assign description = requirement.extension | where: "url", "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.description" | first %}
@@ -10,6 +10,7 @@
 
 
 {% assign statements = requirement.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement' %}
+{% unless statements == empty %}
 Steps in the requirement:
 <ol>
  {% for statement in statements %}
@@ -18,6 +19,19 @@ Steps in the requirement:
  
    {% assign stmtlabel = statement.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.label' | map: 'valueString' | first  %}	    
    {% assign stmtrequirement = statement.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.requirement' | map: 'valueMarkdown' | first  | markdownify %}	    
-    <li><b>{{stmtconformance}} - {{ stmtlabel }}</b>: {{ stmtrequirement }}</li>
-    {% endfor %}
+ <li>
+   <b>
+
+     {% unless stmtconformance == empty %}  
+     <a href="https://hl7.org/fhir/R5//codesystem-conformance-expectation.html#content">
+       {{ stmtconformance  }}
+     </a>
+     -
+     {% endunless %}
+     {{ stmtlabel }}
+   </b>:
+   {{ stmtrequirement }}
+ </li>
+ {% endfor %}
 </ol>
+{% endunless %}
