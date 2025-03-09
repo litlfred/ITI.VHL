@@ -1,0 +1,70 @@
+
+{% assign ext = requirement.extension %}
+
+{% assign title = ext | where: "url", "http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.title" | first %}
+
+
+<table border="1" style="border-collapse: collapse;">
+  <tbody>
+
+
+    <tr>
+      <th>Publisher</th>
+      <td>
+	{% assign contacturl =  ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.contact' | map: 'valueContactDetail' | map: 'telecom' | first | where: 'system', 'url' | first | map: 'value' | first %}
+	{% assign publisher = ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.publisher' | first | map: 'valueString' | first %}
+	<a href="{{  contacturl  }}">{{  publisher  }}</a>
+      </td>
+    </tr>
+    <tr>
+      <th>Contact Email</th>
+      <td>{{ ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.contact' | map: 'valueContactDetail' | map: 'telecom' | first | where: 'system', 'email' | first | map: 'value' | first }}</td>
+    </tr>
+    <tr>
+      <th>Jurisdiction</th>
+      <td>{{ ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.jurisdiction' | first | map: 'valueCodeableConcept' | map: 'coding' | first | first | map: 'code' | first }}</td>
+    </tr>
+    <tr>
+      <th>Steps</th>
+      <td>
+  	<ol>
+	  {% assign statements = ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement' %}
+          {% for statement in statements %}
+	  <li>
+            {% assign stmtconformance = statement.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.conformance' | map: 'valueCode' | first  %}
+	    {% assign stmtkey = statement.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.key' | map: 'valueId' | first  %}
+	    {% assign stmtlabel = statement.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.label' | map: 'valueString' | first  %}	    
+	    {% assign stmtrequirement = statement.extension | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.statement.requirement' | map: 'valueMarkdown' | first  %}	    
+
+	    <b>
+	      {% unless stmtconformance == empty %}  
+	      <a href="https://hl7.org/fhir/R5//codesystem-conformance-expectation.html#content">
+		{{ stmtconformance  }}
+	      </a>
+	      -
+	      {% endunless %}
+	      {{ stmtlabel }} ( {{  stmtkey  }} )
+	    </b>
+	    : {{ stmtrequirement }}
+	  </li>
+	  {% endfor %}
+        </ol>	 
+      </td>
+    <tr>
+    <tr>
+      <th>Participanting Actors</th>
+      <td>
+        <ul>
+          {% assign actors = ext | where: 'url', 'http://hl7.org/fhir/5.0/StructureDefinition/extension-Requirements.actor' %}
+          {% for actor in actors %}
+              {% assign actorinstance = actor.valueCanonical | split: "/" | last  | split: ".html" | first %}
+	      {% assign actorpage = "ActorDefinition-" | append: actorinstance | append: ".html" %}
+	      {% assign actorname = site.data.pages[actorpage].title %}
+              <li><a href="{{  actorpage  }}">{{ actorname | escape_once  }}</a></li>
+	      
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
